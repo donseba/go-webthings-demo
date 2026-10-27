@@ -223,10 +223,9 @@ a system libwebp when one is installed (through purego), which makes the
 Linux binary dynamically linked against glibc's loader, so it does not start
 there. `file bin/demo` says "statically linked" for a Linux build.
 
-`go.mod` builds against the go-webthings checkout in `../go-webthings`. For
-now the demo builds in a Go workspace with development branches of
-go-webthings' libraries, go-importmap's among them for `importmap.FromFS`;
-see [Development](../go-webthings/README.md#development) in go-webthings'
+`go.mod` requires a released go-webthings. To run the demo on a change of
+go-webthings, build it in a Go workspace with a go-webthings checkout; see
+[Development](../go-webthings/README.md#development) in go-webthings'
 README.
 
 ## Translations
