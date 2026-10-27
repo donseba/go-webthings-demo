@@ -7,6 +7,7 @@ import (
 	"embed"
 	"encoding/hex"
 	"fmt"
+	"slices"
 	"time"
 
 	webthings "github.com/donseba/go-webthings"
@@ -193,6 +194,101 @@ func brandLogo(ctx context.Context, app *webthings.App) error {
 	}
 
 	return nil
+}
+
+// seededWorkshops are the Dutch slugs of the workshops the seed plans ahead.
+var seededWorkshops = []string{"kennismaken-met-de-draaischijf", "glazuurdag", "theepot-masterclass"}
+
+// moveWorkshops moves the seeded workshops forward by whole weeks once no
+// published workshop is upcoming, so a demo seeded weeks ago still has
+// workshops to sign up for. They keep their weekday, time and spacing, and
+// the first comes within a week of now. A workshop written in the admin
+// that is still upcoming leaves them as they are, so it can run at every
+// start.
+func moveWorkshops(ctx context.Context, app *webthings.App, now time.Time) error {
+	store := events.Of(app, "workshops").Store()
+
+	items, err := store.List(ctx)
+	if err != nil {
+		return err
+	}
+
+	var seeded []content.Item[events.EventFields, events.EventText]
+
+	for _, item := range items {
+		if item.Published && item.Fields.Start.After(now) {
+			return nil
+		}
+
+		if seededWorkshop(item) {
+			seeded = append(seeded, item)
+		}
+	}
+
+	if len(seeded) == 0 {
+		return nil
+	}
+
+	first := seeded[0].Fields.Start
+	for _, item := range seeded[1:] {
+		if item.Fields.Start.Before(first) {
+			first = item.Fields.Start
+		}
+	}
+
+	weeks := int(now.Sub(first)/(7*24*time.Hour)) + 1
+
+	for _, item := range seeded {
+		if err := moveWorkshop(ctx, store, item, weeks); err != nil {
+			return err
+		}
+	}
+
+	return nil
+}
+
+func seededWorkshop(item content.Item[events.EventFields, events.EventText]) bool {
+	for _, translation := range item.Translations {
+		if translation.Locale == "nl" && slices.Contains(seededWorkshops, translation.Text.Slug) {
+			return true
+		}
+	}
+
+	return false
+}
+
+// moveWorkshop saves and publishes item weeks later, in its own timezone,
+// so the time of day stays the same across a change of summer time.
+func moveWorkshop(
+	ctx context.Context,
+	store content.Store[events.EventFields, events.EventText],
+	item content.Item[events.EventFields, events.EventText],
+	weeks int,
+) error {
+	zone, err := time.LoadLocation(item.Fields.Timezone)
+	if err != nil {
+		zone = time.UTC
+	}
+
+	fields := item.Fields
+	fields.Start = fields.Start.In(zone).AddDate(0, 0, 7*weeks)
+
+	if fields.End != nil {
+		end := fields.End.In(zone).AddDate(0, 0, 7*weeks)
+		fields.End = &end
+	}
+
+	moved, err := store.Save(ctx, content.Draft[events.EventFields, events.EventText]{
+		ID:           item.ID,
+		Fields:       fields,
+		Translations: item.Translations,
+		Note:         "Moved forward by the demo",
+	})
+	if err != nil {
+		return err
+	}
+
+	return store.Publish(ctx, moved.ID, moved.Revision.ID, "nl")
 }
 
 // brand uploads one of brandFiles to the media library.

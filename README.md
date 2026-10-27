@@ -46,6 +46,10 @@ Open http://127.0.0.1:8090/ and the admin at http://127.0.0.1:8090/admin/
 
 The first start fills the site with sample content and photographs
 (`seed.go`). After that the seed does nothing, so edits in the admin are kept.
+Only the three workshops the seed plans ahead move: once no workshop of the
+site is upcoming any more, the next start moves them forward by whole weeks,
+with the same weekday and time (`moveWorkshops`), so there is always one to
+sign up for.
 `task reset` moves `var/` to `var.old-<unix time>/` to start over; delete
 those folders yourself.
 

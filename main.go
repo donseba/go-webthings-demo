@@ -12,6 +12,7 @@ import (
 	"os/signal"
 	"strconv"
 	"syscall"
+	"time"
 
 	webthings "github.com/donseba/go-webthings"
 	"github.com/donseba/go-webthings/frontend"
@@ -145,6 +146,12 @@ func run(ctx context.Context) error {
 	// its logo; the site runs without it when that fails.
 	if err := brandLogo(ctx, app); err != nil {
 		log.Printf("brand logo: %v", err)
+	}
+
+	// The seeded workshops move forward by whole weeks once they are all
+	// over, so there is always a workshop to sign up for.
+	if err := moveWorkshops(ctx, app, time.Now()); err != nil {
+		log.Printf("workshops: %v", err)
 	}
 
 	if developing {
