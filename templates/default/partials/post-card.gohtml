@@ -1,0 +1,9 @@
+{{/* @dot github.com/donseba/go-webthings/modules/publishing.Post */}}
+<article class="card">
+    {{if .ImageURL}}<img src="{{image .ImageURL "720x540 crop"}}" srcset="{{srcset .ImageURL 360 720 1080}}" class="{{focalClass .ImageURL "4:3"}}" sizes="(max-width: 700px) 100vw, 360px" alt="" loading="lazy">{{end}}
+    <div class="card-body">
+        <span class="meta">{{date .Date "medium"}}</span>
+        <h3><a href="{{.URL}}">{{.Title}}</a></h3>
+        {{if .Excerpt}}<p>{{.Excerpt}}</p>{{end}}
+    </div>
+</article>

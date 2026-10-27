@@ -1,0 +1,719 @@
+msgid ""
+msgstr ""
+"Language: nl\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "%[1]s from %[2]s"
+msgstr "%[1]s van %[2]s"
+
+msgid "%d of %d"
+msgstr "%d van %d"
+
+msgid "%d results for “%s”"
+msgstr "%d resultaten voor “%s”"
+
+msgid "A new message waits for approval."
+msgstr "Een nieuw bericht wacht op goedkeuring."
+
+msgid "A new message was posted."
+msgstr "Er is een nieuw bericht geplaatst."
+
+msgid "Address"
+msgstr "Adres"
+
+msgid "Admin"
+msgstr "Beheer"
+
+msgid "Adults"
+msgstr "Volwassenen"
+
+msgid "All"
+msgstr "Alles"
+
+msgid "All day"
+msgstr "Hele dag"
+
+msgid "All downloads"
+msgstr "Alle downloads"
+
+msgid "All places"
+msgstr "Alle adressen"
+
+msgid "All services"
+msgstr "Alle cursussen"
+
+msgid "All stories"
+msgstr "Alle verhalen"
+
+msgid "All workshops"
+msgstr "Alle workshops"
+
+msgid "Allergies, accessibility, questions…"
+msgstr "Allergieën, toegankelijkheid, vragen…"
+
+msgid "Almost done: check your inbox and confirm your subscription."
+msgstr "Bijna klaar: kijk in je inbox en bevestig je inschrijving."
+
+msgid "Already signed up?"
+msgstr "Al aangemeld?"
+
+msgid "Announcement"
+msgstr "Aankondiging"
+
+msgid "Ask about the waiting list"
+msgstr "Vraag naar de wachtlijst"
+
+msgid "Back to the home page"
+msgstr "Terug naar de startpagina"
+
+msgid "Been to a workshop or the open studio? Leave us a message."
+msgstr "Was je bij een workshop of het open atelier? Laat een berichtje achter."
+
+msgid "Bluesky"
+msgstr "Bluesky"
+
+msgid "Book a workshop"
+msgstr "Boek een workshop"
+
+msgid "Booked on"
+msgstr "Aangemeld op"
+
+msgid "Booking code"
+msgstr "Aanmeldcode"
+
+msgid "Cancel booking"
+msgstr "Aanmelding annuleren"
+
+msgid "Cancel this booking"
+msgstr "Deze aanmelding annuleren"
+
+msgid "Categories"
+msgstr "Categorieën"
+
+msgid "Children"
+msgstr "Kinderen"
+
+msgid "Close"
+msgstr "Sluiten"
+
+msgid "Closed now"
+msgstr "Nu gesloten"
+
+msgid "Comment"
+msgstr "Reactie"
+
+msgid "Comments"
+msgstr "Reacties"
+
+msgid "Comments (%d)"
+msgstr "Reacties (%d)"
+
+msgid "Comments are closed."
+msgstr "Reageren is gesloten."
+
+msgid "Comments were closed when you posted. Please try again."
+msgstr "De reacties waren gesloten toen je je reactie verstuurde. Probeer het nog eens."
+
+msgid "Contact"
+msgstr "Contact"
+
+msgid "Downloads"
+msgstr "Downloads"
+
+msgid "E-mail"
+msgstr "E-mail"
+
+msgid "E-mail address"
+msgstr "E-mailadres"
+
+msgid "Edit this page"
+msgstr "Pagina bewerken"
+
+msgid "Enter the code from your confirmation mail to see or cancel your booking."
+msgstr "Vul de code uit je bevestigingsmail in om je aanmelding te bekijken of te annuleren."
+
+msgid "Every season we bring back one retired glaze. You choose which."
+msgstr "Elk seizoen halen we één oud glazuur terug. Jij kiest welke."
+
+msgid "External link"
+msgstr "Externe link"
+
+msgid "Facebook"
+msgstr "Facebook"
+
+msgid "Follow us"
+msgstr "Volg ons"
+
+msgid "Free"
+msgstr "Gratis"
+
+msgid "Friday"
+msgstr "vrijdag"
+
+msgid "From the journal"
+msgstr "Uit het journaal"
+
+msgid "Full agenda"
+msgstr "Volledige agenda"
+
+msgid "Get in touch"
+msgstr "Neem contact op"
+
+msgid "GitHub"
+msgstr "GitHub"
+
+msgid "Have your say"
+msgstr "Praat mee"
+
+msgid "Hello %s,"
+msgstr "Hallo %s,"
+
+msgid "If you did not subscribe, you can ignore this message."
+msgstr "Heb je je niet ingeschreven? Dan kun je dit bericht negeren."
+
+msgid "Instagram"
+msgstr "Instagram"
+
+msgid "Internal Server Error"
+msgstr "Interne serverfout"
+
+msgid "It may have moved, or it was never published."
+msgstr "Misschien is ze verplaatst, of nooit gepubliceerd."
+
+msgid "Kind words"
+msgstr "Lieve woorden"
+
+msgid "Language"
+msgstr "Taal"
+
+msgid "Leave a comment"
+msgstr "Laat een reactie achter"
+
+msgid "LinkedIn"
+msgstr "LinkedIn"
+
+msgid "Look up"
+msgstr "Opzoeken"
+
+msgid "Look up your booking"
+msgstr "Zoek je aanmelding op"
+
+msgid "Made with WebThings"
+msgstr "Gemaakt met WebThings"
+
+msgid "Main menu"
+msgstr "Hoofdmenu"
+
+msgid "Mastodon"
+msgstr "Mastodon"
+
+msgid "Meet the team"
+msgstr "Maak kennis met het team"
+
+msgid "Menu"
+msgstr "Menu"
+
+msgid "Message"
+msgstr "Bericht"
+
+msgid "Messages"
+msgstr "Berichten"
+
+msgid "Messages are shown after we have read them."
+msgstr "Berichten verschijnen nadat we ze gelezen hebben."
+
+msgid "Monday"
+msgstr "maandag"
+
+msgid "More messages"
+msgstr "Meer berichten"
+
+msgid "Name"
+msgstr "Naam"
+
+msgid "New messages are closed."
+msgstr "Nieuwe berichten zijn gesloten."
+
+msgid "Newer"
+msgstr "Nieuwer"
+
+msgid "No comments yet. Be the first!"
+msgstr "Nog geen reacties. Wees de eerste!"
+
+msgid "No messages yet. Be the first!"
+msgstr "Nog geen berichten. Wees de eerste!"
+
+msgid "No past events."
+msgstr "Nog geen eerdere workshops."
+
+msgid "No upcoming events right now. Check back soon."
+msgstr "Er staan nu geen workshops gepland. Kijk binnenkort nog eens."
+
+msgid "None, this workshop is full"
+msgstr "Geen, deze workshop is vol"
+
+msgid "Not found"
+msgstr "Niet gevonden"
+
+msgid "Not Found"
+msgstr "Niet gevonden"
+
+msgid "Nothing found for “%s”."
+msgstr "Niets gevonden voor “%s”."
+
+msgid "Nothing found."
+msgstr "Niets gevonden."
+
+msgid "Nothing published yet."
+msgstr "Er is nog niets gepubliceerd."
+
+msgid "Older"
+msgstr "Ouder"
+
+msgid "Open now"
+msgstr "Nu open"
+
+msgid "Opening hours"
+msgstr "Openingstijden"
+
+msgid "Optional, never shown on the website."
+msgstr "Niet verplicht, nooit zichtbaar op de website."
+
+msgid "Our work is for sale in these shops, and you eat and drink from it in these cafés and restaurants."
+msgstr "Ons werk is te koop in deze winkels, en in deze cafés en restaurants eet en drink je eruit."
+
+msgid "Page:"
+msgstr "Pagina:"
+
+msgid "Past"
+msgstr "Geweest"
+
+msgid "Pay now"
+msgstr "Nu betalen"
+
+msgid "Pinterest"
+msgstr "Pinterest"
+
+msgid "Places left"
+msgstr "Plaatsen vrij"
+
+msgid "Please check the marked fields."
+msgstr "Controleer de gemarkeerde velden."
+
+msgid "Please check your name, e-mail address and the number of places."
+msgstr "Controleer je naam, e-mailadres en het aantal plaatsen."
+
+msgid "Please choose one of the options."
+msgstr "Kies een van de antwoorden."
+
+msgid "Please confirm your subscription"
+msgstr "Bevestig je inschrijving voor de nieuwsbrief"
+
+msgid "Please fill in your name and a comment."
+msgstr "Vul je naam en een reactie in."
+
+msgid "Please fill in your name and a message."
+msgstr "Vul je naam en een bericht in."
+
+msgid "Please pay using:"
+msgstr "Betaal via:"
+
+msgid "Popular on the site"
+msgstr "Populair op de site"
+
+msgid "Post comment"
+msgstr "Plaats reactie"
+
+msgid "Preview of revision %d (not published)."
+msgstr "Voorbeeld van revisie %d (niet gepubliceerd)."
+
+msgid "Preview of revision %d."
+msgstr "Voorbeeld van revisie %d."
+
+msgid "Service Unavailable"
+msgstr "Dienst niet beschikbaar"
+
+msgid "Show the published version"
+msgstr "Toon de gepubliceerde versie"
+
+msgid "Price"
+msgstr "Prijs"
+
+msgid "Read more"
+msgstr "Lees meer"
+
+msgid "Registration"
+msgstr "Aanmelding"
+
+msgid "Registration cancelled"
+msgstr "Aanmelding geannuleerd"
+
+msgid "Registration code"
+msgstr "Aanmeldcode"
+
+msgid "Registration for this workshop is closed."
+msgstr "Aanmelden voor deze workshop is gesloten."
+
+msgid "Remarks"
+msgstr "Opmerkingen"
+
+msgid "Review:"
+msgstr "Beoordelen:"
+
+msgid "Saturday"
+msgstr "zaterdag"
+
+msgid "Search"
+msgstr "Zoeken"
+
+msgid "Search by name or product"
+msgstr "Zoek op naam of product"
+
+msgid "Send"
+msgstr "Versturen"
+
+msgid "Share"
+msgstr "Delen"
+
+msgid "Show all"
+msgstr "Toon alles"
+
+msgid "Show on the map"
+msgstr "Toon op de kaart"
+
+msgid "Sign the guestbook"
+msgstr "Schrijf in het gastenboek"
+
+msgid "Sign up"
+msgstr "Aanmelden"
+
+msgid "Sign up before"
+msgstr "Aanmelden vóór"
+
+msgid "Something went wrong"
+msgstr "Er ging iets mis"
+
+msgid "Something went wrong. Please try again."
+msgstr "Er ging iets mis. Probeer het opnieuw."
+
+msgid "Sorry, there are not enough places left."
+msgstr "Sorry, er zijn niet genoeg plaatsen meer vrij."
+
+msgid "Studio"
+msgstr "Atelier"
+
+msgid "Subscribe"
+msgstr "Inschrijven"
+
+msgid "Sunday"
+msgstr "zondag"
+
+msgid "Telegram"
+msgstr "Telegram"
+
+msgid "Thank you for registering for %s."
+msgstr "Bedankt voor je aanmelding voor %s."
+
+msgid "Thank you for subscribing to our newsletter. Please confirm your e-mail address with the link below."
+msgstr "Dank je wel voor je inschrijving voor onze nieuwsbrief. Bevestig je e-mailadres met de link hieronder."
+
+msgid "Thank you for voting!"
+msgstr "Bedankt voor je stem!"
+
+msgid "Thank you for your comment."
+msgstr "Bedankt voor je reactie."
+
+msgid "Thank you for your message!"
+msgstr "Bedankt voor je bericht!"
+
+msgid "Thank you! Your comment appears once we have read it."
+msgstr "Bedankt! Je reactie verschijnt zodra we hem gelezen hebben."
+
+msgid "Thank you! Your message appears once we have read it."
+msgstr "Bedankt! Je bericht verschijnt zodra we het gelezen hebben."
+
+msgid "Thank you, you are signed up. We sent you a confirmation."
+msgstr "Bedankt, je bent aangemeld. We hebben je een bevestiging gestuurd."
+
+msgid "That did not work. Please check your e-mail address or link."
+msgstr "Dat lukte niet. Controleer je e-mailadres of de link."
+
+msgid "That e-mail address does not match this booking."
+msgstr "Dat e-mailadres hoort niet bij deze aanmelding."
+
+msgid "The e-mail address you signed up with"
+msgstr "Het e-mailadres waarmee je je hebt aangemeld"
+
+msgid "The people in the studio"
+msgstr "De mensen in het atelier"
+
+msgid "The whole team"
+msgstr "Het hele team"
+
+msgid "This booking is cancelled."
+msgstr "Deze aanmelding is geannuleerd."
+
+msgid "This field is required."
+msgstr "Dit veld is verplicht."
+
+msgid "This page could not be shown. Please try again in a moment."
+msgstr "Deze pagina kon niet worden getoond. Probeer het zo nog eens."
+
+msgid "This page does not exist"
+msgstr "Deze pagina bestaat niet"
+
+msgid "This poll is closed."
+msgstr "Deze peiling is gesloten."
+
+msgid "This text is too long."
+msgstr "Deze tekst is te lang."
+
+msgid "This value is not valid."
+msgstr "Deze waarde is niet geldig."
+
+msgid "This workshop is full."
+msgstr "Deze workshop is vol."
+
+msgid "Threads"
+msgstr "Threads"
+
+msgid "Thursday"
+msgstr "donderdag"
+
+msgid "TikTok"
+msgstr "TikTok"
+
+msgid "Too many attempts. Please try again later."
+msgstr "Te veel pogingen. Probeer het later opnieuw."
+
+msgid "Too Many Requests"
+msgstr "Te veel verzoeken"
+
+msgid "Total"
+msgstr "Totaal"
+
+msgid "Tuesday"
+msgstr "dinsdag"
+
+msgid "Upcoming"
+msgstr "Binnenkort"
+
+msgid "Upcoming workshops"
+msgstr "Komende workshops"
+
+msgid "View or cancel your registration:"
+msgstr "Bekijk of annuleer je aanmelding:"
+
+msgid "Views: %d"
+msgstr "Bekeken: %d"
+
+msgid "Visit us"
+msgstr "Bezoek ons"
+
+msgid "Vote"
+msgstr "Stem"
+
+msgid "Votes: %d"
+msgstr "Stemmen: %d"
+
+msgid "Voting closes on %s."
+msgstr "Stemmen kan tot %s."
+
+msgid "Voting has closed."
+msgstr "Stemmen is gesloten."
+
+msgid "We could not find a booking with the code %s."
+msgstr "We vonden geen aanmelding met de code %s."
+
+msgid "Website"
+msgstr "Website"
+
+msgid "Wednesday"
+msgstr "woensdag"
+
+msgid "What we do"
+msgstr "Wat we doen"
+
+msgid "WhatsApp"
+msgstr "WhatsApp"
+
+msgid "X"
+msgstr "X"
+
+msgid "You already paid; we will contact you about a refund."
+msgstr "Je had al betaald; we nemen contact met je op over terugbetaling."
+
+msgid "You already voted on this question."
+msgstr "Je hebt al gestemd op deze vraag."
+
+msgid "You are unsubscribed. Sorry to see you go."
+msgstr "Je bent uitgeschreven. Jammer dat je gaat."
+
+msgid "You posted several comments already. Please try again later."
+msgstr "Je hebt al een paar reacties geplaatst. Probeer het later opnieuw."
+
+msgid "You posted several messages already. Please try again later."
+msgstr "Je hebt al een paar berichten geplaatst. Probeer het later opnieuw."
+
+msgid "You receive a mail to confirm your address. Every newsletter has a link to unsubscribe."
+msgstr "Je krijgt een mail om je adres te bevestigen. Elke nieuwsbrief heeft een link om je uit te schrijven."
+
+msgid "You sent the form several times already. Please try again later."
+msgstr "Je hebt het formulier al een paar keer verstuurd. Probeer het later opnieuw."
+
+msgid "YouTube"
+msgstr "YouTube"
+
+msgid "Your booking code is %s."
+msgstr "Je aanmeldcode is %s."
+
+msgid "Your booking is cancelled."
+msgstr "Je aanmelding is geannuleerd."
+
+msgid "Your registration for %s is cancelled."
+msgstr "Je aanmelding voor %s is geannuleerd."
+
+msgid "Your remarks"
+msgstr "Jouw opmerkingen"
+
+msgid "Your subscription is confirmed. Welcome!"
+msgstr "Je inschrijving is bevestigd. Welkom!"
+
+msgid "cancelled"
+msgstr "geannuleerd"
+
+msgid "closed"
+msgstr "gesloten"
+
+msgid "not paid yet"
+msgstr "nog niet betaald"
+
+msgid "paid"
+msgstr "betaald"
+
+msgid "per child"
+msgstr "per kind"
+
+msgid "per person"
+msgstr "per persoon"
+
+msgid "photos"
+msgstr "foto's"
+
+msgid "you@example.com"
+msgstr "jij@voorbeeld.nl"
+
+msgid "your choice"
+msgstr "jouw keuze"
+
+msgid "Thank you. Your comment is shown after approval."
+msgstr "Bedankt. Je reactie verschijnt na goedkeuring."
+
+msgid "E-mail address (optional)"
+msgstr "E-mailadres (optioneel)"
+
+msgid "Never shown on the website."
+msgstr "Wordt nooit op de website getoond."
+
+msgid "Comments are shown after approval."
+msgstr "Reacties verschijnen na goedkeuring."
+
+msgid "Team"
+msgstr "Team"
+
+msgid "No comments yet."
+msgstr "Nog geen reacties."
+
+msgid "Your subscription is confirmed."
+msgstr "Je inschrijving is bevestigd."
+
+msgid "You are unsubscribed."
+msgstr "Je bent uitgeschreven."
+
+msgid "You receive an e-mail to confirm your address. Every newsletter has a link to unsubscribe."
+msgstr "Je krijgt een e-mail om je adres te bevestigen. Elke nieuwsbrief heeft een link om je uit te schrijven."
+
+msgid "Thank you for voting."
+msgstr "Bedankt voor je stem."
+
+msgid "Too many votes. Please try again later."
+msgstr "Te veel stemmen. Probeer het later opnieuw."
+
+msgid "Thank you, you are registered. We sent you a confirmation."
+msgstr "Bedankt, je bent aangemeld. We hebben je een bevestiging gestuurd."
+
+msgid "Your registration code is %s."
+msgstr "Je aanmeldcode is %s."
+
+msgid "Registration is closed."
+msgstr "Aanmelden is gesloten."
+
+msgid "None"
+msgstr "Geen"
+
+msgid "Remarks (optional)"
+msgstr "Opmerkingen (optioneel)"
+
+msgid "There are no places left."
+msgstr "Er zijn geen plaatsen meer."
+
+msgid "Already registered?"
+msgstr "Al aangemeld?"
+
+msgid "Look up your registration"
+msgstr "Zoek je aanmelding op"
+
+msgid "Your registration is cancelled."
+msgstr "Je aanmelding is geannuleerd."
+
+msgid "Ceramics studio · Amsterdam-Noord"
+msgstr "Keramiekatelier · Amsterdam-Noord"
+
+msgid "The studio"
+msgstr "Het atelier"
+
+msgid "Learn with us"
+msgstr "Leer het bij ons"
+
+msgid "Next in the studio"
+msgstr "Binnenkort in het atelier"
+
+msgid "Also coming up"
+msgstr "Ook op de agenda"
+
+msgid "Our work"
+msgstr "Ons werk"
+
+msgid "Made by hand in Noord"
+msgstr "Met de hand gemaakt in Noord"
+
+msgid "Tableware for restaurants and for every day: thrown, glazed and fired in our studio."
+msgstr "Servies voor restaurants en voor elke dag: gedraaid, geglazuurd en gestookt in ons atelier."
+
+msgid "View all work"
+msgstr "Bekijk al het werk"
+
+msgid "From students and restaurants"
+msgstr "Van cursisten en restaurants"
+
+msgid "Read all reviews"
+msgstr "Lees alle ervaringen"
+
+msgid "Notes from the workbench"
+msgstr "Notities van de werkbank"
+
+msgid "Glaze of the season"
+msgstr "Glazuur van het seizoen"
+
+msgid "Teachers and makers"
+msgstr "Docenten en makers"
+
+msgid "Fresh from the kiln, in your inbox"
+msgstr "Vers uit de oven, in je inbox"
+
+msgid "Too many searches in a short time. Wait a moment and try again."
+msgstr "Te veel zoekopdrachten in korte tijd. Wacht even en probeer het opnieuw."
+
+msgid "K7Q4-9M2X"
+msgstr "K7Q4-9M2X"

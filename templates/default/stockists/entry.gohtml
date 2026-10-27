@@ -1,0 +1,39 @@
+{{/* @dot github.com/donseba/go-webthings/modules/directory.Entry */}}
+<main id="content" class="narrow">
+    <p class="meta"><a href="{{.Category.URL}}">{{.Category.Name}}</a></p>
+    <h1>{{.Name}}</h1>
+    {{with .Summary}}<p class="lead">{{.}}</p>{{end}}
+
+    {{if .ImageURL}}<img class="featured" src="{{.ImageURL}}" srcset="{{.ImageSrcset}}" sizes="(max-width: 46rem) 100vw, 42rem" width="{{.ImageWidth}}" height="{{.ImageHeight}}" alt="">{{end}}
+    {{with .Description}}<div class="prose">{{.}}</div>{{end}}
+
+    <div class="stockist-details">
+        <section>
+            <h2>{{tl localizer "Address"}}</h2>
+            <address>
+                {{with .Street}}{{.}}<br>{{end}}
+                {{.Postcode}} {{.City}}
+            </address>
+
+            <ul class="contact-list">
+                {{with .Website}}<li><a href="{{.}}" rel="noopener">{{tl localizer "Website"}}</a></li>{{end}}
+                {{with .Email}}<li><a href="mailto:{{.}}">{{.}}</a></li>{{end}}
+                {{with .Phone}}<li>{{.}}</li>{{end}}
+                {{if .HasLocation}}<li><a href="https://www.openstreetmap.org/?mlat={{.Latitude}}&amp;mlon={{.Longitude}}#map=17/{{.Latitude}}/{{.Longitude}}" rel="noopener">{{tl localizer "Show on the map"}}</a></li>{{end}}
+            </ul>
+        </section>
+
+        {{if .Hours.Known}}
+            <section>
+                <h2>
+                    {{tl localizer "Opening hours"}}
+                    {{if .OpenNow}}<span class="badge open">{{tl localizer "Open now"}}</span>{{else}}<span class="badge">{{tl localizer "Closed now"}}</span>{{end}}
+                </h2>
+                {{template "partials/opening-hours.gohtml" .Hours}}
+                {{with .HoursNote}}<p class="meta">{{.}}</p>{{end}}
+            </section>
+        {{else}}
+            {{with .HoursNote}}<p class="meta">{{.}}</p>{{end}}
+        {{end}}
+    </div>
+</main>

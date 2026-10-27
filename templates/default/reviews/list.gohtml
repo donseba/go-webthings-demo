@@ -1,0 +1,7 @@
+{{/* @dot github.com/donseba/go-webthings/modules/testimonials.ListView */}}
+<main id="content" class="wrap">
+    <h1>{{.Title}}</h1>
+    <div class="quotes">
+        {{range .Testimonials}}{{template "partials/quote.gohtml" .}}{{end}}
+    </div>
+</main>

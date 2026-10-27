@@ -1,0 +1,12 @@
+{{/* @dot github.com/donseba/go-webthings/modules/polls.ListView */}}
+<main id="content" class="narrow">
+    <h1>{{.Title}}</h1>
+
+    <div class="polls">
+        {{range .Polls}}
+            {{template "partials/poll.gohtml" .}}
+        {{else}}
+            <p class="notice">{{tl localizer "Nothing published yet."}}</p>
+        {{end}}
+    </div>
+</main>

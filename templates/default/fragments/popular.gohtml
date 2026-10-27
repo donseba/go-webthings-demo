@@ -1,0 +1,16 @@
+{{/* The most read pages of the last month, for a sidebar that loads them when it scrolls into view ({{deferredSlot "popular" "reveal"}}). */}}
+{{with popular "stats" 5 30}}
+    <section id="popular">
+        <h2>{{tl localizer "Popular on the site"}}</h2>
+        <ol class="popular" role="list">
+            {{range .}}
+                <li>
+                    <a href="{{.Path}}">{{.Title}}</a>
+                    <span class="meta">{{tl localizer "Views: %d" .Views}}</span>
+                </li>
+            {{end}}
+        </ol>
+    </section>
+{{else}}
+    <section id="popular" hidden></section>
+{{end}}

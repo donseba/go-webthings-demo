@@ -1,0 +1,25 @@
+{{/* @dot github.com/donseba/go-webthings/modules/publishing.Post */}}
+<main id="content">
+    <article class="narrow">
+        <p class="meta">{{date .Date}}</p>
+        <h1>{{.Title}}</h1>
+        {{if .Excerpt}}<p class="lead">{{.Excerpt}}</p>{{end}}
+        {{if .ImageURL}}<img class="featured" src="{{.ImageURL}}" srcset="{{.ImageSrcset}}" sizes="(max-width: 46rem) 100vw, 42rem" width="{{.ImageWidth}}" height="{{.ImageHeight}}" alt="">{{end}}
+        <div class="prose">{{.Body}}</div>
+
+        {{if .Categories}}
+            <nav class="tags" aria-label="{{tl localizer "Categories"}}">
+                {{range .Categories}}<a href="{{.URL}}">{{.Title}}</a>{{end}}
+            </nav>
+        {{end}}
+
+        {{with share "" .Title}}
+            <nav class="share" aria-label="{{tl localizer "Share"}}">
+                <span class="meta">{{tl localizer "Share"}}</span>
+                {{range .}}<a href="{{.URL}}" class="share-{{.Network}}" target="_blank" rel="noopener">{{.Label}}</a>{{end}}
+            </nav>
+        {{end}}
+    </article>
+
+    {{requiredSlot "remarks"}}
+</main>

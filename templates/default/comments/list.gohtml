@@ -1,0 +1,55 @@
+{{/* @dot github.com/donseba/go-webthings/modules/comments.ListView */}}
+<main id="content" class="narrow guestbook">
+    <h1>{{.Title}}</h1>
+    <p class="lead">{{tl localizer "Been to a workshop or the open studio? Leave us a message."}}</p>
+
+    {{/* The form returns the visitor here, to the element with the id of the instance key. */}}
+    <div id="{{.Key}}">
+        {{if eq .Result "sent"}}
+            <p class="notice" role="status">{{tl localizer "Thank you for your message!"}}</p>
+        {{else if eq .Result "pending"}}
+            <p class="notice" role="status">{{tl localizer "Thank you! Your message appears once we have read it."}}</p>
+        {{else if eq .Result "closed"}}
+            <p class="notice" role="status">{{tl localizer "New messages are closed."}}</p>
+        {{else if eq .Result "invalid"}}
+            <p class="notice" role="status">{{tl localizer "Please fill in your name and a message."}}</p>
+        {{else if eq .Result "throttled"}}
+            <p class="notice" role="status">{{tl localizer "You posted several messages already. Please try again later."}}</p>
+        {{end}}
+
+        {{if .Closed}}
+            <p class="meta">{{tl localizer "New messages are closed."}}</p>
+        {{else}}
+            <div class="card guestbook-form">
+                {{form_open .Form}}
+                    {{form_field .Form "subject" nil}}
+
+                    <div class="card-body">
+                        {{/* The fields and their limits come from the module (comments.PostInput). */}}
+                        {{form_field .Form "name" nil}}
+                        {{form_field .Form "email" nil}}
+                        {{form_field .Form "body" nil}}
+                        {{if .Moderated}}<p class="help">{{tl localizer "Messages are shown after we have read them."}}</p>{{end}}
+
+                        <p><button class="button" type="submit">{{tl localizer "Sign the guestbook"}}</button></p>
+                    </div>
+                {{form_close}}
+            </div>
+        {{end}}
+    </div>
+
+    <section class="comments" aria-label="{{tl localizer "Messages"}}">
+        {{range .Comments}}
+            {{template "partials/comment.gohtml" .}}
+        {{else}}
+            <p class="meta">{{tl localizer "No messages yet. Be the first!"}}</p>
+        {{end}}
+    </section>
+
+    {{if or .NewerURL .OlderURL}}
+        <nav class="pager" aria-label="{{tl localizer "More messages"}}">
+            {{with .NewerURL}}<a class="button ghost" href="{{.}}">← {{tl localizer "Newer"}}</a>{{end}}
+            {{with .OlderURL}}<a class="button ghost" href="{{.}}">{{tl localizer "Older"}} →</a>{{end}}
+        </nav>
+    {{end}}
+</main>

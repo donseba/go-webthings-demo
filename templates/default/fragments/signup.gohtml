@@ -1,0 +1,78 @@
+{{/*
+    The sign-up box of a workshop. Signing up with HTMX returns to the
+    workshop with the result, and the workshop answers with this box alone.
+    The dot is the registration; Event is the workshop throughout.
+
+    @model Event github.com/donseba/go-webthings/modules/events.Event
+*/}}
+{{with registration "signup" Event.ID}}
+    {{/* Workshops without sign-up settings show no box. */}}
+    {{if .Configured}}
+        <section class="card booking" id="signup" aria-labelledby="booking-title">
+            <div class="card-body">
+                <h2 id="booking-title">{{tl localizer "Sign up"}}</h2>
+
+                {{with registrationResult "signup"}}
+                    <p class="notice" role="status">
+                        {{if eq . "registered"}}{{tl localizer "Thank you, you are signed up. We sent you a confirmation."}}
+                            {{with registrationCode "signup"}}{{tl localizer "Your booking code is %s." .}}{{end}}
+                        {{else if eq . "full"}}{{tl localizer "Sorry, there are not enough places left."}}
+                        {{else if eq . "closed"}}{{tl localizer "Registration for this workshop is closed."}}
+                        {{else if eq . "throttled"}}{{tl localizer "You sent the form several times already. Please try again later."}}
+                        {{else}}{{tl localizer "Please check your name, e-mail address and the number of places."}}{{end}}
+                    </p>
+                {{end}}
+
+                <dl class="facts">
+                    <dt>{{tl localizer "Price"}}</dt>
+                    <dd>
+                        {{if .Prices.Free}}{{tl localizer "Free"}}{{else}}{{money .Prices.Adult .Currency}} {{tl localizer "per person"}}{{end}}
+                        {{if and .AllowChildren .Prices.Child}}<br>{{money .Prices.Child .Currency}} {{tl localizer "per child"}}{{end}}
+                    </dd>
+
+                    {{if .Capacity}}
+                        <dt>{{tl localizer "Places left"}}</dt>
+                        <dd>{{if .Full}}{{tl localizer "None, this workshop is full"}}{{else}}{{tl localizer "%d of %d" .Left .Capacity}}{{end}}</dd>
+                    {{end}}
+
+                    {{/* Without a deadline of its own, registration closes when the workshop starts. */}}
+                    {{if and (not .ClosesAt.IsZero) (not (.ClosesAt.Equal Event.Start))}}
+                        <dt>{{tl localizer "Sign up before"}}</dt>
+                        <dd>{{date .ClosesAt}}, {{time .ClosesAt}}</dd>
+                    {{end}}
+                </dl>
+
+                {{.Notes}}
+
+                {{if .Open}}
+                    {{/* form_open adds go-partial's HTMX attributes to go-form's tag; the fields come with their limits from the module (registrations.SignupInput): at most the places left. */}}
+                    {{form_open .Form (submitAttrs runtime .Action "target" "#signup" "swap" "outerHTML")}}
+                        {{form_field .Form "subject" nil}}
+                        {{form_field .Form "name" nil}}
+                        {{form_field .Form "email" nil}}
+
+                        <div class="field-row">
+                            {{form_field .Form "adults" nil}}
+                            {{if .AllowChildren}}{{form_field .Form "children" nil}}{{end}}
+                        </div>
+
+                        {{form_field .Form "notes" nil}}
+
+                        <p><button class="button" type="submit">{{tl localizer "Sign up"}}</button></p>
+                    {{form_close}}
+                {{else if .Full}}
+                    <p class="notice">
+                        {{tl localizer "This workshop is full."}}
+                        {{with moduleURL "contact"}}<a href="{{.}}">{{tl localizer "Ask about the waiting list"}}</a>{{end}}
+                    </p>
+                {{else}}
+                    <p class="notice">{{tl localizer "Registration for this workshop is closed."}}</p>
+                {{end}}
+
+                {{with moduleURL "signup"}}
+                    <p class="meta">{{tl localizer "Already signed up?"}} <a href="{{.}}">{{tl localizer "Look up your booking"}}</a></p>
+                {{end}}
+            </div>
+        </section>
+    {{end}}
+{{end}}

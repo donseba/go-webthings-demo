@@ -1,0 +1,233 @@
+{{/* @dot github.com/donseba/go-webthings/frontend.Page */}}
+<main id="content">
+    {{if .IsHome}}
+        <section class="hero">
+            <div class="wrap hero-grid">
+                <div class="hero-text">
+                    <p class="eyebrow">{{tl localizer "Ceramics studio · Amsterdam-Noord"}}</p>
+                    <h1>{{.Title}}</h1>
+                    {{if .Description}}<p class="lead">{{.Description}}</p>{{end}}
+                    <div class="actions">
+                        {{with moduleURL "workshops"}}<a class="button" href="{{.}}">{{tl localizer "Book a workshop"}}</a>{{end}}
+                        {{with moduleURL "contact"}}<a class="button ghost" href="{{.}}">{{tl localizer "Get in touch"}}</a>{{end}}
+                    </div>
+                </div>
+
+                {{with album "work" "tableware"}}
+                    {{if .Images}}
+                        <div class="hero-media">
+                            {{range $i, $image := .Images}}
+                                {{if lt $i 2}}
+                                    <figure class="hero-figure">
+                                        <img src="{{$image.URL}}" srcset="{{$image.Srcset}}" sizes="(max-width: 900px) 100vw, 50vw" alt="{{$image.Alt}}" width="{{$image.Width}}" height="{{$image.Height}}">
+                                        {{with $image.Title}}<figcaption>{{.}}</figcaption>{{end}}
+                                    </figure>
+                                {{end}}
+                            {{end}}
+                        </div>
+                    {{end}}
+                {{end}}
+            </div>
+        </section>
+
+        {{if .Body}}
+            <section class="section statement">
+                <div class="wrap">
+                    <p class="eyebrow">{{tl localizer "The studio"}}</p>
+                    <div class="statement-text">{{.Body}}</div>
+                </div>
+            </section>
+        {{end}}
+
+        {{/*
+            The services as a numbered list. The first is highlighted with its
+            image beside it; pointing at another one shows that one instead.
+            On small screens every service shows its own image.
+        */}}
+        {{with entries "services"}}
+            <section class="section">
+                <div class="wrap services">
+                    <div class="services-head">
+                        <p class="eyebrow">{{tl localizer "Learn with us"}}</p>
+                        <h2>{{tl localizer "What we do"}}</h2>
+                    </div>
+
+                    <ol class="numbered" role="list">
+                        {{range .}}
+                            <li class="numbered-item">
+                                <div class="numbered-text">
+                                    <h3>{{.Title}}</h3>
+                                    <div class="numbered-body">{{.Body}}</div>
+                                </div>
+                                {{if .ImageURL}}<img class="numbered-image" src="{{.ImageURL}}" srcset="{{.ImageSrcset}}" sizes="(max-width: 900px) 100vw, 50vw" alt="" loading="lazy">{{end}}
+                            </li>
+                        {{end}}
+                    </ol>
+
+                    {{with moduleURL "services"}}<p class="services-more"><a class="more" href="{{.}}">{{tl localizer "All services"}} →</a></p>{{end}}
+                </div>
+            </section>
+        {{end}}
+
+        {{/* The next workshop large, the ones after it as a short agenda. */}}
+        {{with events "workshops" 4}}
+            <section class="section">
+                <div class="wrap">
+                    {{range $i, $event := .}}
+                        {{if eq $i 0}}
+                            <article class="feature">
+                                {{if $event.ImageURL}}<img class="feature-image" src="{{$event.ImageURL}}" srcset="{{$event.ImageSrcset}}" sizes="(max-width: 900px) 100vw, 66vw" alt="" loading="lazy">{{end}}
+                                <div class="feature-text">
+                                    <p class="eyebrow">{{tl localizer "Next in the studio"}}</p>
+                                    <h2><a href="{{$event.URL}}">{{$event.Title}}</a></h2>
+                                    <p class="feature-when">{{template "partials/when.gohtml" $event.When}}{{with $event.Location}}<br>{{.}}{{end}}</p>
+                                    {{with $event.Summary}}<p>{{.}}</p>{{end}}
+
+                                    {{with registration "signup" $event.ID}}
+                                        {{if .Configured}}
+                                            <p class="feature-price">{{if .Prices.Free}}{{tl localizer "Free"}}{{else}}{{money .Prices.Adult .Currency}} {{tl localizer "per person"}}{{end}}</p>
+                                        {{end}}
+                                        {{if and .Configured .Open}}
+                                            <p><a class="button" href="{{$event.URL}}#signup">{{tl localizer "Sign up"}}</a></p>
+                                        {{else}}
+                                            <p><a class="button ghost" href="{{$event.URL}}">{{tl localizer "Read more"}}</a></p>
+                                        {{end}}
+                                    {{end}}
+                                </div>
+                            </article>
+                        {{end}}
+                    {{end}}
+
+                    {{if gt (len .) 1}}
+                        <div class="agenda">
+                            <div class="section-head">
+                                <p class="eyebrow">{{tl localizer "Also coming up"}}</p>
+                                {{with moduleURL "workshops"}}<a class="more" href="{{.}}">{{tl localizer "Full agenda"}} →</a>{{end}}
+                            </div>
+                            {{range $i, $event := .}}
+                                {{if gt $i 0}}{{template "partials/event-row.gohtml" $event}}{{end}}
+                            {{end}}
+                        </div>
+                    {{end}}
+                </div>
+            </section>
+        {{end}}
+
+        {{with albums "work"}}
+            <section class="section">
+                <div class="wrap">
+                    <div class="section-intro">
+                        <p class="eyebrow">{{tl localizer "Our work"}}</p>
+                        <h2>{{tl localizer "Made by hand in Noord"}}</h2>
+                        <p>{{tl localizer "Tableware for restaurants and for every day: thrown, glazed and fired in our studio."}}</p>
+                    </div>
+
+                    <div class="portfolio">
+                        {{range .}}
+                            <article class="project">
+                                {{if .CoverURL}}<img src="{{.CoverURL}}" srcset="{{.CoverSrcset}}" sizes="(max-width: 700px) 100vw, 50vw" alt="" loading="lazy">{{end}}
+                                <h3><a href="{{.URL}}">{{.Title}}</a></h3>
+                                <p class="eyebrow">{{.ImageCount}} {{tl localizer "photos"}}</p>
+                            </article>
+                        {{end}}
+                    </div>
+
+                    {{with moduleURL "work"}}<p class="center"><a class="button" href="{{.}}">{{tl localizer "View all work"}}</a></p>{{end}}
+                </div>
+            </section>
+        {{end}}
+
+        {{with testimonials "reviews" 3}}
+            <section class="band">
+                <div class="wrap">
+                    <div class="section-intro">
+                        <p class="eyebrow">{{tl localizer "Kind words"}}</p>
+                        <h2>{{tl localizer "From students and restaurants"}}</h2>
+                    </div>
+
+                    <div class="quotes">
+                        {{range .}}{{template "partials/quote.gohtml" .}}{{end}}
+                    </div>
+
+                    {{with moduleURL "reviews"}}<p class="center"><a class="button ghost" href="{{.}}">{{tl localizer "Read all reviews"}}</a></p>{{end}}
+                </div>
+            </section>
+        {{end}}
+
+        {{with posts "journal" 3}}
+            <section class="section">
+                <div class="wrap">
+                    <div class="section-head">
+                        <div>
+                            <p class="eyebrow">{{tl localizer "From the journal"}}</p>
+                            <h2>{{tl localizer "Notes from the workbench"}}</h2>
+                        </div>
+                        {{with moduleURL "journal"}}<a class="more" href="{{.}}">{{tl localizer "All stories"}} →</a>{{end}}
+                    </div>
+                    <div class="grid">
+                        {{range .}}{{template "partials/post-card.gohtml" .}}{{end}}
+                    </div>
+                </div>
+            </section>
+        {{end}}
+
+        {{range polls "poll" 1}}
+            <section class="section">
+                <div class="wrap poll-band">
+                    <div>
+                        <p class="eyebrow">{{tl localizer "Glaze of the season"}}</p>
+                        <h2>{{tl localizer "Have your say"}}</h2>
+                        <p class="lead">{{tl localizer "Every season we bring back one retired glaze. You choose which."}}</p>
+                    </div>
+                    {{template "partials/poll.gohtml" .}}
+                </div>
+            </section>
+        {{end}}
+
+        {{with people "team"}}
+            <section class="section">
+                <div class="wrap">
+                    <div class="section-head">
+                        <div>
+                            <p class="eyebrow">{{tl localizer "Teachers and makers"}}</p>
+                            <h2>{{tl localizer "The people in the studio"}}</h2>
+                        </div>
+                        {{with moduleURL "team"}}<a class="more" href="{{.}}">{{tl localizer "Meet the team"}} →</a>{{end}}
+                    </div>
+                    <div class="team">
+                        {{range .}}{{template "partials/person-card.gohtml" .}}{{end}}
+                    </div>
+                </div>
+            </section>
+        {{end}}
+    {{else}}
+        <article class="narrow">
+            <header class="page-head">
+                <h1>{{.Title}}</h1>
+                {{if .Description}}<p class="lead">{{.Description}}</p>{{end}}
+            </header>
+            <div class="prose">{{.Body}}</div>
+        </article>
+
+        {{/* The page above the team page (About) introduces the team. */}}
+        {{$team := moduleURL "team"}}
+        {{if and $team (eq $team (printf "%s/team" .URL))}}
+            {{with people "team"}}
+                <section class="section">
+                    <div class="wrap">
+                        <div class="section-head">
+                            <div>
+                                <p class="eyebrow">{{tl localizer "Teachers and makers"}}</p>
+                                <h2>{{tl localizer "The people in the studio"}}</h2>
+                            </div>
+                            <a class="more" href="{{$team}}">{{tl localizer "Meet the team"}} →</a>
+                        </div>
+                        <div class="team">
+                            {{range .}}{{template "partials/person-card.gohtml" .}}{{end}}
+                        </div>
+                    </div>
+                </section>
+            {{end}}
+        {{end}}
+    {{end}}
+</main>

@@ -1,0 +1,18 @@
+{{/* @dot github.com/donseba/go-webthings/frontend.SearchView */}}
+<main id="content" class="wrap search-page">
+    <h1>{{tl localizer "Search"}}</h1>
+
+    <form class="search-form" action="{{.URL}}" method="get" role="search">
+        {{/* Results follow while typing; the button searches without JavaScript. */}}
+        <input
+            type="search"
+            name="q"
+            value="{{.Query}}"
+            aria-label="{{tl localizer "Search"}}"
+            autofocus
+            {{liveAttrs runtime .URL "target" "#results" "swap" "outerHTML" "delay" "300ms" "replaceURL" "true"}}>
+        <button class="button" type="submit">{{tl localizer "Search"}}</button>
+    </form>
+
+    {{requiredSlot "results"}}
+</main>

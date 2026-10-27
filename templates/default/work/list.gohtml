@@ -1,0 +1,16 @@
+{{/* @dot github.com/donseba/go-webthings/modules/gallery.ListView */}}
+<main id="content" class="wrap">
+    <h1>{{.Title}}</h1>
+
+    <div class="portfolio">
+        {{range .Albums}}
+            <article class="project">
+                {{if .CoverURL}}<img src="{{.CoverURL}}" srcset="{{.CoverSrcset}}" sizes="(max-width: 700px) 100vw, 50vw" alt="" loading="lazy">{{end}}
+                <h3><a href="{{.URL}}">{{.Title}}</a></h3>
+                <p class="eyebrow">{{.ImageCount}} {{tl localizer "photos"}}</p>
+            </article>
+        {{else}}
+            <p class="notice">{{tl localizer "Nothing published yet."}}</p>
+        {{end}}
+    </div>
+</main>

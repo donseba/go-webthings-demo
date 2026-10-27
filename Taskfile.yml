@@ -1,0 +1,47 @@
+version: '3'
+
+tasks:
+  default:
+    cmd: task --list
+
+  run:
+    desc: Run the demo on http://127.0.0.1:8090 (admin at /admin/)
+    env:
+      WEBTHINGS_INSECURE_HTTP: 'true'
+      WEBTHINGS_ADMIN_EMAIL: '{{.WEBTHINGS_ADMIN_EMAIL | default "admin@example.test"}}'
+      WEBTHINGS_ADMIN_PASSWORD: '{{.WEBTHINGS_ADMIN_PASSWORD | default "demo-only-password"}}'
+      # curl -H 'Authorization: Bearer demo-metrics-token' http://127.0.0.1:8090/metrics
+      WEBTHINGS_METRICS_TOKEN: '{{.WEBTHINGS_METRICS_TOKEN | default "demo-metrics-token"}}'
+    cmd: go run .
+
+  dev:
+    desc: 'Run the demo on http://127.0.0.1:8090 for development: templates reload on every request, errors in full, no page cache'
+    env:
+      WEBTHINGS_DEVELOPMENT: 'true'
+      WEBTHINGS_INSECURE_HTTP: 'true'
+      WEBTHINGS_ADMIN_EMAIL: '{{.WEBTHINGS_ADMIN_EMAIL | default "admin@example.test"}}'
+      WEBTHINGS_ADMIN_PASSWORD: '{{.WEBTHINGS_ADMIN_PASSWORD | default "demo-only-password"}}'
+      WEBTHINGS_METRICS_TOKEN: '{{.WEBTHINGS_METRICS_TOKEN | default "demo-metrics-token"}}'
+    cmd: go run .
+
+  translations:
+    desc: Write the templates' texts to translations/translations.pot, then update each .po from it in Poedit
+    cmd: go run . translations
+
+  translations:check:
+    desc: 'List the texts each language misses and fail when any are missing (as CSV: task translations:check -- --csv)'
+    cmd: go run . translations check {{.CLI_ARGS}}
+
+  vendor:
+    desc: Vendor the theme's JavaScript packages (importmap.json) into assets/vendor with their licences and lock file
+    cmd: go generate -run importmap .
+
+  build:
+    desc: Build a static demo binary (no cgo, no system libwebp), for example for Alpine or scratch images
+    env:
+      CGO_ENABLED: '0'
+    cmd: go build -tags nodynamic -o bin/demo .
+
+  reset:
+    desc: Start over with fresh sample content (moves var/ to var.old-<unix time>/; delete those yourself)
+    cmd: mv var var.old-$(date +%s)

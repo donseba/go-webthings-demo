@@ -1,0 +1,14 @@
+{{/* @dot github.com/donseba/go-webthings/modules/directory.CategoryView */}}
+<main id="content" class="wrap">
+    <p class="meta"><a href="{{.ListURL}}">← {{tl localizer "All places"}}</a></p>
+    <h1>{{.Category.Name}}</h1>
+    {{with .Category.Summary}}<p class="lead">{{.}}</p>{{end}}
+
+    <div class="grid">
+        {{range .Entries}}
+            {{template "partials/stockist-card.gohtml" .}}
+        {{else}}
+            <p class="notice">{{tl localizer "Nothing published yet."}}</p>
+        {{end}}
+    </div>
+</main>

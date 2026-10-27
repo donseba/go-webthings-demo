@@ -1,0 +1,8 @@
+{{/* @dot github.com/donseba/go-webthings/modules/people.Person */}}
+<article class="person-card">
+    {{if .PhotoURL}}<img src="{{image .PhotoURL "600x750 crop"}}" srcset="{{srcset .PhotoURL 360 720 1080}}" class="{{focalClass .PhotoURL "4:5"}}" sizes="(max-width: 700px) 100vw, 360px" alt="{{.Name}}" loading="lazy">{{end}}
+    <div>
+        <h3>{{if .URL}}<a href="{{.URL}}">{{.Name}}</a>{{else}}{{.Name}}{{end}}</h3>
+        {{with .Role}}<p class="meta">{{.}}</p>{{end}}
+    </div>
+</article>

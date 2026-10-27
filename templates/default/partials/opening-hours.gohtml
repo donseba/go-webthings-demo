@@ -1,0 +1,11 @@
+{{/* @dot github.com/donseba/go-webthings/modules/directory.OpeningHours */}}
+<table class="hours">
+    <tbody>
+        {{range .Week}}
+            <tr>
+                <th scope="row">{{weekday .Weekday}}</th>
+                <td>{{if .Closed}}{{tl localizer "closed"}}{{else}}{{.Open}}–{{.Close}}{{end}}</td>
+            </tr>
+        {{end}}
+    </tbody>
+</table>

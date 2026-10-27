@@ -1,0 +1,7 @@
+{{/* @dot github.com/donseba/go-webthings/frontend.View */}}
+{{- /* Another language loads the whole page: the layout around the content changes too. */ -}}
+<nav class="languages" id="languages" {{oobAttr}} aria-label="{{tl localizer "Language"}}">
+    {{range .Languages}}
+        <a href="{{.URL}}" hreflang="{{.Locale}}" lang="{{.Locale}}"{{noBoost runtime}} {{if .Active}}aria-current="true"{{end}}>{{.Locale}}</a>
+    {{end}}
+</nav>

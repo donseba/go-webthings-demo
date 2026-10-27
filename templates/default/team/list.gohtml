@@ -1,0 +1,15 @@
+{{/* @dot github.com/donseba/go-webthings/modules/people.ListView */}}
+<main id="content" class="wrap">
+    <h1>{{.Title}}</h1>
+
+    {{range .Groups}}
+        <section class="section team-group">
+            {{with .Name}}<h2>{{.}}</h2>{{end}}
+            <div class="team">
+                {{range .People}}{{template "partials/person-card.gohtml" .}}{{end}}
+            </div>
+        </section>
+    {{else}}
+        <p class="notice">{{tl localizer "Nothing published yet."}}</p>
+    {{end}}
+</main>

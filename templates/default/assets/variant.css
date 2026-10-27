@@ -1,0 +1,6 @@
+/*
+ * Colours only. Themes based on this one replace this file to recolour the
+ * design: they set --paper, --surface, --ink, --muted and --line on :root
+ * (see the night theme). Body text, fields and the coloured band derive from
+ * those; the accent is the theme's "accent" setting.
+ */

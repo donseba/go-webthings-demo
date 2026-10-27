@@ -1,0 +1,117 @@
+{{/* @dot github.com/donseba/go-webthings/frontend.View */}}
+<!doctype html>
+<html lang="{{.Locale}}" data-headings="{{.Theme.Values.headings}}">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {{/*
+        The title, description, canonical and alternate links, sharing tags,
+        icons, feeds and structured data of the page: WebThings writes them
+        (core's head region), as the theme has no regions/head.gohtml.
+    */}}
+    {{slot "head"}}
+    {{/*
+        The box that takes the place of a part of the page that failed
+        (go-partial), site.css, variant.css (the night theme has its own),
+        focal-points.css, the classes of focalClass that keep the focal point
+        of a cropped photo in view, and last the accent colour chosen under
+        Theme, as --accent (theme.json).
+    */}}
+    {{styles "site.css" "variant.css" "focal-points.css"}}
+    {{importmap}}
+    {{assetScript "site.js" "type" "module"}}
+</head>
+{{/*
+    With site.js, links and forms swap only <main id="content">; the regions
+    (head, menu, languages, editor, flash) follow out of band, and fragments
+    update on their own. Without it, every link and form loads a whole page.
+    Submit buttons are disabled while their form is sent, and a 5xx answer
+    leaves the page as it is: a link that gets one, or no answer, loads as
+    a whole page instead, and a form shows the server's error page, so the
+    visitor sees what went wrong (go-partial's clientAttrs; reloadOnError
+    needs its interactions client, which site.js loads).
+*/}}
+<body{{clientAttrs runtime "inherit" "true" "boost" "on" "target" "#content" "swap" "outerHTML showTarget:body"
+          "disableWhileRequest" "find button[type='submit']" "keepOnServerError" "true" "reloadOnError" "true"}}>
+    {{with .Revision}}
+        <div class="preview-bar">
+            {{if .Published}}{{tl localizer "Preview of revision %d." .Number}}{{else}}{{tl localizer "Preview of revision %d (not published)." .Number}}{{end}}
+            <a href="{{.PublishedURL}}"{{noBoost runtime}}>{{tl localizer "Show the published version"}}</a>
+        </div>
+    {{end}}
+
+    {{with banner "notice"}}
+        <aside class="announcement tone-{{.Tone}}" data-dismiss="{{.ID}}" aria-label="{{tl localizer "Announcement"}}">
+            <div class="wrap">
+                <p>
+                    <strong>{{.Title}}</strong>
+                    {{with .Subtitle}}<span>{{.}}</span>{{end}}
+                </p>
+                {{with .Text}}<div class="announcement-text">{{.}}</div>{{end}}
+                {{if .ButtonURL}}<a href="{{.ButtonURL}}">{{.ButtonLabel}} →</a>{{end}}
+                <button class="announcement-close" type="button" aria-label="{{tl localizer "Close"}}" hidden>×</button>
+            </div>
+        </aside>
+    {{end}}
+
+    <header class="site-header">
+        <div class="wrap">
+            <a class="brand" href="{{.Site.HomeURL}}">
+                {{if .Site.LogoURL}}<img src="{{.Site.LogoURL}}" alt="">{{end}}
+                <span>{{.Site.Name}}</span>
+            </a>
+
+            <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu">{{tl localizer "Menu"}}</button>
+
+            {{slot "menu"}}
+
+            <a class="search-link" href="{{searchURL}}" aria-label="{{tl localizer "Search"}}" title="{{tl localizer "Search"}}">
+                <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+            </a>
+
+            {{slot "languages"}}
+        </div>
+    </header>
+
+    {{slot "editor"}}
+
+    {{slot "flash"}}
+
+    {{content}}
+
+    <footer class="site-footer">
+        <div class="wrap footer-signup-wrap">
+            {{requiredSlot "letters"}}
+        </div>
+
+        <div class="wrap footer-columns">
+            <div>
+                <p class="footer-brand">{{.Site.Name}}</p>
+                <p>{{.Site.Tagline}}</p>
+                {{.Site.Footer}}
+            </div>
+
+            <div>
+                <h3>{{tl localizer "Visit us"}}</h3>
+                <address>{{.Site.Address}}</address>
+            </div>
+
+            <div>
+                <h3>{{tl localizer "Contact"}}</h3>
+                {{with .Site.Email}}<p><a href="mailto:{{.}}">{{.}}</a></p>{{end}}
+                {{with .Site.Phone}}<p>{{.}}</p>{{end}}
+
+                {{with .Site.Profiles}}
+                    <nav class="profiles" aria-label="{{tl localizer "Follow us"}}">
+                        {{range .}}<a href="{{.URL}}" rel="me" class="profile-{{.Network}}">{{.Label}}</a>{{end}}
+                    </nav>
+                {{end}}
+            </div>
+        </div>
+
+        <div class="wrap footer-bottom">
+            <p>{{with adminURL "admin.dashboard"}}<a href="{{.}}"{{noBoost runtime}}>{{tl localizer "Admin"}}</a> · {{end}}{{tl localizer "Made with WebThings"}}</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,25 @@
+{{/* @dot github.com/donseba/go-partial/ext/errors.Data */}}
+{{/* @model View github.com/donseba/go-webthings/frontend.View */}}
+{{/*
+    The page of a request whose page failed to render (go-partial's
+    ext/errors): on its own, without the layout and its regions, with status
+    500. It never shows the error, which is in the server's log.
+*/}}
+<!doctype html>
+<html lang="{{View.Locale}}" data-headings="{{View.Theme.Values.headings}}">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{tl localizer "Something went wrong"}} · {{View.Site.Name}}</title>
+    <meta name="robots" content="noindex">
+    {{styles "site.css" "variant.css"}}
+</head>
+<body>
+    <main id="content" class="narrow">
+        <p class="eyebrow">500</p>
+        <h1>{{tl localizer "Something went wrong"}}</h1>
+        <p class="lead">{{tl localizer "This page could not be shown. Please try again in a moment."}}</p>
+        <p><a class="button" href="{{View.Site.HomeURL}}">{{tl localizer "Back to the home page"}}</a></p>
+    </main>
+</body>
+</html>

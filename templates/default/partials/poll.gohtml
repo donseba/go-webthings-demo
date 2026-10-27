@@ -1,0 +1,52 @@
+{{/* @dot github.com/donseba/go-webthings/modules/polls.Poll */}}
+<article class="card poll" id="{{.Anchor}}">
+    <div class="card-body">
+        <h3>{{.Question}}</h3>
+
+        {{if eq .Result "voted"}}
+            <p class="notice" role="status">{{tl localizer "Thank you for voting!"}}</p>
+        {{else if eq .Result "already"}}
+            <p class="notice" role="status">{{tl localizer "You already voted on this question."}}</p>
+        {{else if eq .Result "closed"}}
+            <p class="notice" role="status">{{tl localizer "This poll is closed."}}</p>
+        {{else if eq .Result "invalid"}}
+            <p class="notice" role="status">{{tl localizer "Please choose one of the options."}}</p>
+        {{end}}
+
+        {{if .CanVote}}
+            {{/*
+                Polls have no fragment of their own, there can be several on a
+                page: HTMX asks for the whole page and picks this poll out.
+                form_open adds go-partial's HTMX attributes to go-form's tag;
+                without JavaScript the visitor returns to this poll (.Anchor).
+            */}}
+            {{form_open .Form "class" "poll-form" (submitAttrs runtime .Action "target" (printf "#%s" .Anchor) "select" (printf "#%s" .Anchor) "swap" "outerHTML")}}
+                {{form_field .Form "poll" nil}}
+                {{/* The options as radio buttons (.choices, .choice), labelled with the question. */}}
+                {{form_field .Form "option" nil}}
+
+                <p><button class="button" type="submit">{{tl localizer "Vote"}}</button></p>
+            {{form_close}}
+        {{end}}
+
+        {{if .ShowResults}}
+            <ul class="results">
+                {{range .Options}}
+                    <li{{if .Chosen}} class="chosen"{{end}}>
+                        <span>{{.Label}}{{if .Chosen}} · {{tl localizer "your choice"}}{{end}}</span>
+                        <span class="meta">{{.Percent}}%</span>
+                        <meter class="bar" min="0" max="100" value="{{.Percent}}" aria-hidden="true">{{.Percent}}%</meter>
+                    </li>
+                {{end}}
+            </ul>
+
+            <p class="meta">{{tl localizer "Votes: %d" .Total}}</p>
+        {{end}}
+
+        {{if .Closed}}
+            <p class="meta">{{tl localizer "Voting has closed."}}</p>
+        {{else if not .ClosesAt.IsZero}}
+            <p class="meta">{{tl localizer "Voting closes on %s." (date .ClosesAt)}}</p>
+        {{end}}
+    </div>
+</article>

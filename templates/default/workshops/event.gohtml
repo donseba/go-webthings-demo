@@ -1,0 +1,19 @@
+{{/* @dot github.com/donseba/go-webthings/modules/events.Event */}}
+<main id="content">
+    <article class="narrow event">
+        <div class="event-details">
+            <p class="meta">{{template "partials/when.gohtml" .When}}</p>
+            <h1>{{.Title}}</h1>
+            {{if .Summary}}<p class="lead">{{.Summary}}</p>{{end}}
+
+            {{if or .Location .Address}}
+                <p class="notice"><strong>{{.Location}}</strong>{{if .Address}}<br>{{.Address}}{{end}}</p>
+            {{end}}
+
+            {{if .ImageURL}}<img class="featured" src="{{.ImageURL}}" srcset="{{.ImageSrcset}}" sizes="(max-width: 46rem) 100vw, 42rem" width="{{.ImageWidth}}" height="{{.ImageHeight}}" alt="">{{end}}
+            <div class="prose">{{.Body}}</div>
+        </div>
+
+        {{requiredSlot "signup"}}
+    </article>
+</main>

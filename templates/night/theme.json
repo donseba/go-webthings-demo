@@ -1,0 +1,8 @@
+{
+  "title": "Noord by night",
+  "description": "The Atelier design in deep blue, always dark. Only its colours differ; everything else comes from the default theme.",
+  "settings": [
+    {"name": "accent", "label": {"en": "Accent colour", "nl": "Accentkleur"}, "type": "color", "default": "#e0a458", "css": "--accent"},
+    {"name": "headings", "label": {"en": "Headings", "nl": "Koppen"}, "type": "select", "options": ["serif", "sans"], "default": "sans"}
+  ]
+}

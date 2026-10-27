@@ -1,0 +1,37 @@
+{{/* @dot github.com/donseba/go-webthings/modules/directory.ListView */}}
+<main id="content" class="wrap">
+    <h1>{{.Title}}</h1>
+    <p class="lead">{{tl localizer "Our work is for sale in these shops, and you eat and drink from it in these cafés and restaurants."}}</p>
+
+    <form class="search" method="get" action="{{.URL}}" role="search">
+        <label class="visually-hidden" for="stockist-search">{{tl localizer "Search"}}</label>
+        <input id="stockist-search" type="search" name="q" value="{{.Query}}" placeholder="{{tl localizer "Search by name or product"}}">
+        <button class="button" type="submit">{{tl localizer "Search"}}</button>
+    </form>
+
+    {{if .Categories}}
+        <nav class="tags" aria-label="{{tl localizer "Categories"}}">
+            <a href="{{.URL}}" {{if not .Category}}aria-current="true"{{end}}>{{tl localizer "All"}}</a>
+            {{range .Categories}}
+                <a href="{{.URL}}" {{if .Active}}aria-current="true"{{end}}>{{.Name}} ({{.Count}})</a>
+            {{end}}
+        </nav>
+    {{end}}
+
+    {{if .Query}}<p class="meta">{{tl localizer "%d results for “%s”" .Count .Query}}</p>{{end}}
+
+    {{range .Groups}}
+        <section class="section">
+            <div class="section-head">
+                <h2>{{.Category.Name}}</h2>
+                <a href="{{.Category.URL}}">{{tl localizer "Show all"}} →</a>
+            </div>
+            {{with .Category.Summary}}<p class="meta">{{.}}</p>{{end}}
+            <div class="grid">
+                {{range .Entries}}{{template "partials/stockist-card.gohtml" .}}{{end}}
+            </div>
+        </section>
+    {{else}}
+        <p class="notice">{{tl localizer "Nothing found."}}</p>
+    {{end}}
+</main>

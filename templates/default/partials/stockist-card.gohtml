@@ -1,0 +1,12 @@
+{{/* @dot github.com/donseba/go-webthings/modules/directory.Entry */}}
+<article class="card stockist">
+    {{if .ImageURL}}<img src="{{image .ImageURL "720x540 crop"}}" srcset="{{srcset .ImageURL 360 720 1080}}" class="{{focalClass .ImageURL "4:3"}}" sizes="(max-width: 700px) 100vw, 360px" alt="" loading="lazy">{{end}}
+    <div class="card-body">
+        <h3><a href="{{.URL}}">{{.Name}}</a></h3>
+        {{with .Summary}}<p>{{.}}</p>{{end}}
+        {{if or .Street .City}}<p class="meta">{{.Street}}{{if and .Street .City}}, {{end}}{{.City}}</p>{{end}}
+        {{if .Hours.Known}}
+            <p>{{if .OpenNow}}<span class="badge open">{{tl localizer "Open now"}}</span>{{else}}<span class="badge">{{tl localizer "Closed now"}}</span>{{end}}</p>
+        {{end}}
+    </div>
+</article>

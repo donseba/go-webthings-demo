@@ -1,0 +1,16 @@
+{{/* @dot github.com/donseba/go-webthings/modules/forms.FormView */}}
+<main id="content" class="narrow">
+    <h1>{{.Title}}</h1>
+
+    {{if .Sent}}
+        <div class="notice prose">{{.Success}}</div>
+    {{else}}
+        <div class="lead prose">{{.Intro}}</div>
+
+        {{if .Throttled}}<p class="notice">{{tl localizer "You sent the form several times already. Please try again later."}}</p>{{end}}
+        {{if .Invalid}}<p class="notice">{{tl localizer "Please check the marked fields."}}</p>{{end}}
+
+        {{/* Every field the editors defined, with its answer and errors in the page's language, the spam trap and the Send button: go-form (forms.FormView.Form). */}}
+        {{form_render .Form .Errors}}
+    {{end}}
+</main>

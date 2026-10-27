@@ -1,0 +1,20 @@
+{{/* @dot github.com/donseba/go-webthings/frontend.View */}}
+{{- /*
+    Every item carries its ElementID: navigation sends only the items that
+    change, the one left and the one arrived at, with the sections above
+    them, rather than the whole menu.
+*/ -}}
+<nav class="menu" id="menu" {{oobAttr}} aria-label="{{tl localizer "Main menu"}}">
+    {{range .Menu}}
+        {{if .Children}}
+            <div class="has-children">
+                <a id="{{.ElementID}}" href="{{.URL}}" {{if .Active}}aria-current="page"{{end}}>{{.Title}}</a>
+                <div class="submenu">
+                    {{range .Children}}<a id="{{.ElementID}}" href="{{.URL}}" {{if .Active}}aria-current="page"{{end}}>{{.Title}}</a>{{end}}
+                </div>
+            </div>
+        {{else}}
+            <a id="{{.ElementID}}" href="{{.URL}}" {{if .Active}}aria-current="page"{{end}}>{{.Title}}</a>
+        {{end}}
+    {{end}}
+</nav>

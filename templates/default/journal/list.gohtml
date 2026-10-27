@@ -1,0 +1,34 @@
+{{/* @dot github.com/donseba/go-webthings/modules/publishing.ListView */}}
+<main id="content" class="wrap">
+    <h1>{{.Title}}</h1>
+
+    {{if .Categories}}
+        <nav class="tags" aria-label="{{tl localizer "Categories"}}">
+            {{range .Categories}}
+                <a href="{{.URL}}" {{if .Active}}aria-current="true"{{end}}>{{.Title}}</a>
+            {{end}}
+        </nav>
+    {{end}}
+
+    <div class="with-sidebar">
+        <div class="grid">
+            {{range .Posts}}
+                {{template "partials/post-card.gohtml" .}}
+            {{else}}
+                <p class="notice">{{tl localizer "Nothing published yet."}}</p>
+            {{end}}
+        </div>
+
+        <aside class="sidebar">
+            {{/* Counting the views takes a moment, so the fragment (fragments/popular.gohtml) follows once the sidebar is in view. */}}
+            {{deferredSlot "popular" "reveal"}}
+
+            {{with events "workshops" 2}}
+                <section>
+                    <h2>{{tl localizer "Upcoming workshops"}}</h2>
+                    {{range .}}{{template "partials/event-row.gohtml" .}}{{end}}
+                </section>
+            {{end}}
+        </aside>
+    </div>
+</main>

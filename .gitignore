@@ -1,0 +1,10 @@
+/var/
+# Earlier states, moved aside by task reset.
+/var.old-*/
+/bin/
+.DS_Store
+.go-clue/index.json
+/go-webthings-demo
+
+# Images handed over for the seed; the seed uses photos/ and brand/.
+/_temp/

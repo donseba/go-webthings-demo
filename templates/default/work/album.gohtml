@@ -1,0 +1,17 @@
+{{/* @dot github.com/donseba/go-webthings/modules/gallery.Album */}}
+<main id="content" class="wrap">
+    <p class="eyebrow">{{len .Images}} {{tl localizer "photos"}}</p>
+    <h1>{{.Title}}</h1>
+    {{if .Description}}<div class="lead prose">{{.Description}}</div>{{end}}
+
+    <div class="photos" data-lightbox>
+        {{range .Images}}
+            <figure>
+                <img src="{{.URL}}" srcset="{{.Srcset}}" sizes="(max-width: 44rem) 100vw, (max-width: 66rem) 50vw, 26rem" data-full="{{.LargeURL}}" alt="{{.Alt}}" width="{{.Width}}" height="{{.Height}}" loading="lazy">
+                {{if .Title}}<figcaption>{{.Title}}</figcaption>{{end}}
+            </figure>
+        {{end}}
+    </div>
+
+    <dialog class="lightbox"><img alt=""></dialog>
+</main>

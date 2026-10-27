@@ -1,0 +1,22 @@
+{{/* @dot github.com/donseba/go-webthings/modules/documents.ListView */}}
+<main id="content" class="narrow">
+    <h1>{{.Title}}</h1>
+
+    {{if .Categories}}
+        <nav class="tags" aria-label="{{tl localizer "Categories"}}">
+            <a href="{{.AllURL}}" {{if not .Category}}aria-current="true"{{end}}>{{tl localizer "All"}}</a>
+            {{range .Categories}}
+                <a href="{{.URL}}" {{if .Active}}aria-current="true"{{end}}>{{.Name}} ({{.Count}})</a>
+            {{end}}
+        </nav>
+    {{end}}
+
+    {{range .Years}}
+        <section class="documents">
+            <h2>{{.Year}}</h2>
+            {{range .Documents}}{{template "partials/document-row.gohtml" .}}{{end}}
+        </section>
+    {{else}}
+        <p class="notice">{{tl localizer "Nothing published yet."}}</p>
+    {{end}}
+</main>

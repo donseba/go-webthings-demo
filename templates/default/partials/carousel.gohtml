@@ -1,0 +1,9 @@
+{{/* @dot github.com/donseba/go-webthings/modules/gallery.Album */}}
+<div class="carousel" aria-label="{{.Title}}">
+    {{range .Images}}
+        <figure>
+            <img src="{{.URL}}" srcset="{{.Srcset}}" sizes="(max-width: 44rem) 100vw, 50vw" alt="{{.Alt}}" width="{{.Width}}" height="{{.Height}}">
+            {{if .Title}}<figcaption>{{.Title}}</figcaption>{{end}}
+        </figure>
+    {{end}}
+</div>

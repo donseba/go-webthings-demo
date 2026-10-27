@@ -1,0 +1,35 @@
+{{/*
+    The footer signup, on every page. Its dot is the content of whichever page
+    it is on; it takes what it needs from the page itself.
+
+    @model View github.com/donseba/go-webthings/frontend.View
+*/}}
+{{if ne View.Module "letters"}}
+    {{with newsletter "letters"}}
+        <div class="footer-signup" id="letters">
+            <div class="footer-signup-text">
+                <p class="eyebrow">{{.Title}}</p>
+                <h2>{{tl localizer "Fresh from the kiln, in your inbox"}}</h2>
+                {{with .Intro}}<div class="footer-signup-intro">{{.}}</div>{{end}}
+            </div>
+
+            {{if eq .Result "check-mail"}}
+                <p class="notice" role="status">{{tl localizer "Almost done: check your inbox and confirm your subscription."}}</p>
+            {{else if eq .Result "throttled"}}
+                <p class="notice" role="status">{{tl localizer "Too many attempts. Please try again later."}}</p>
+            {{else if eq .Result "invalid"}}
+                <p class="notice" role="status">{{tl localizer "That did not work. Please check your e-mail address or link."}}</p>
+            {{end}}
+
+            {{if ne .Result "check-mail"}}
+                {{/* form_open adds go-partial's HTMX attributes to go-form's tag. */}}
+                {{form_open .Form "class" "signup-inline" (submitAttrs runtime .Action "target" "#letters" "swap" "outerHTML")}}
+                    {{form_field .Form "locale" nil}}
+                    {{/* Its label is hidden (site.css); after a post with a mistake it shows the address again, with the message. */}}
+                    {{form_field .Form "email" nil}}
+                    <button class="button" type="submit">{{tl localizer "Subscribe"}}</button>
+                {{form_close}}
+            {{end}}
+        </div>
+    {{end}}
+{{end}}

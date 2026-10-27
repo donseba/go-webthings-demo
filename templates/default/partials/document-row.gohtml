@@ -1,0 +1,13 @@
+{{/* @dot github.com/donseba/go-webthings/modules/documents.Document */}}
+<article class="document">
+    <span class="filetype" aria-hidden="true">{{if .External}}↗{{else}}{{.FileType}}{{end}}</span>
+    <div>
+        <h3><a href="{{.URL}}"{{noBoost runtime}}>{{.Title}}</a></h3>
+        <p class="meta">
+            {{date .Date}}
+            {{with .Category}} · {{if $.CategoryURL}}<a href="{{$.CategoryURL}}">{{.}}</a>{{else}}{{.}}{{end}}{{end}}
+            {{if .External}} · {{tl localizer "External link"}}{{else}} · {{.FileType}}, {{.SizeText}}{{end}}
+        </p>
+        {{with .Description}}<div class="document-text">{{.}}</div>{{end}}
+    </div>
+</article>

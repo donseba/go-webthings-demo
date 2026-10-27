@@ -1,0 +1,8 @@
+{
+  "title": "Atelier",
+  "description": "Calm and editorial: a light serif over a light sans, square photographs with room around them, quiet dark buttons and one muted celadon accent. Always light, whatever the visitor's system prefers.",
+  "settings": [
+    {"name": "accent", "label": {"en": "Accent colour", "nl": "Accentkleur"}, "type": "color", "default": "#8aa598", "css": "--accent"},
+    {"name": "headings", "label": {"en": "Headings", "nl": "Koppen"}, "type": "select", "options": ["serif", "sans"], "default": "serif"}
+  ]
+}

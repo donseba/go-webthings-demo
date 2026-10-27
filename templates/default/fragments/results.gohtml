@@ -1,0 +1,21 @@
+{{/* @dot github.com/donseba/go-webthings/frontend.SearchView */}}
+<div id="results" aria-live="polite">
+    {{if .Throttled}}
+        <p>{{tl localizer "Too many searches in a short time. Wait a moment and try again."}}</p>
+    {{else if .Query}}
+        {{if .Results}}
+            <p class="meta">{{tl localizer "%d results for “%s”" (len .Results) .Query}}</p>
+
+            <ol class="search-results" role="list">
+                {{range .Results}}
+                    <li>
+                        <a href="{{.URL}}">{{.Title}}</a>
+                        {{with .Summary}}<p>{{.}}</p>{{end}}
+                    </li>
+                {{end}}
+            </ol>
+        {{else}}
+            <p>{{tl localizer "Nothing found for “%s”." .Query}}</p>
+        {{end}}
+    {{end}}
+</div>

@@ -1,0 +1,8 @@
+{{/* @dot github.com/donseba/go-webthings/modules/testimonials.Testimonial */}}
+<figure class="quote">
+    <blockquote>“{{.Quote}}”</blockquote>
+    <figcaption>
+        {{if .PhotoURL}}<img src="{{image .PhotoURL "96x96 crop"}}" alt="">{{end}}
+        <span><strong>{{.Author}}</strong>{{.Role}}{{if and .Role .Organisation}}, {{end}}{{.Organisation}}</span>
+    </figcaption>
+</figure>

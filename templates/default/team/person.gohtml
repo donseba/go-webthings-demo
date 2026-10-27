@@ -1,0 +1,24 @@
+{{/* @dot github.com/donseba/go-webthings/modules/people.Person */}}
+<main id="content" class="narrow">
+    <article class="person">
+        {{if .PhotoURL}}<img class="portrait" src="{{.PhotoURL}}" srcset="{{.PhotoSrcset}}" sizes="15rem" alt="{{.Name}}">{{end}}
+
+        <div>
+            {{with .Group}}<p class="meta">{{.}}</p>{{end}}
+            <h1>{{.Name}}</h1>
+            {{with .Role}}<p class="lead">{{.}}</p>{{end}}
+            <div class="prose">{{.Bio}}</div>
+
+            {{if or .Email .PhoneURL .Website .LinkedIn}}
+                <ul class="contact-list">
+                    {{with .Email}}<li><a href="mailto:{{.}}">{{.}}</a></li>{{end}}
+                    {{with .PhoneURL}}<li><a href="{{.}}">{{$.Phone}}</a></li>{{end}}
+                    {{with .Website}}<li><a href="{{.}}">{{tl localizer "Website"}}</a></li>{{end}}
+                    {{with .LinkedIn}}<li><a href="{{.}}">LinkedIn</a></li>{{end}}
+                </ul>
+            {{end}}
+        </div>
+    </article>
+
+    {{with moduleURL "team"}}<p><a href="{{.}}">← {{tl localizer "The whole team"}}</a></p>{{end}}
+</main>

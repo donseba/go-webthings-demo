@@ -1,0 +1,18 @@
+{{/* @dot github.com/donseba/go-webthings/frontend.View */}}
+{{- /*
+    The links in the newsletter's mails land here; the footer form shows its
+    own result. Always there, so navigation clears it.
+*/ -}}
+{{$result := ""}}
+{{if ne .Module "letters"}}
+    {{with newsletterResult "letters"}}
+        {{if or (eq . "confirmed") (eq . "unsubscribed")}}{{$result = .}}{{end}}
+    {{end}}
+{{end}}
+<div id="flash" {{with $result}}class="wrap flash"{{end}} {{oobAttr}}>
+    {{if eq $result "confirmed"}}
+        <p class="notice" role="status">{{tl localizer "Your subscription is confirmed. Welcome!"}}</p>
+    {{else if eq $result "unsubscribed"}}
+        <p class="notice" role="status">{{tl localizer "You are unsubscribed. Sorry to see you go."}}</p>
+    {{end}}
+</div>

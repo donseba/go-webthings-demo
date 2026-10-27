@@ -1,0 +1,14 @@
+/* Noord by night: the default theme's design with other colours. */
+:root,
+:root[data-headings] {
+    color-scheme: dark;
+
+    --paper: #0f1724;
+    --surface: #16213a;
+    --ink: #e8edf6;
+    --muted: #9aa8bf;
+    --line: #2a3654;
+    --clay-soft: #2b2a3a;
+    --sage: #8fb3c9;
+    --shadow: 0 1px 2px rgb(0 0 0 / 35%), 0 8px 24px rgb(0 0 0 / 30%);
+}

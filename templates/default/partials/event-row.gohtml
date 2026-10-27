@@ -1,0 +1,9 @@
+{{/* @dot github.com/donseba/go-webthings/modules/events.Event */}}
+<article class="event-row">
+    <div class="date-badge">{{date .Start "d"}}<small>{{date .Start "MMM"}}</small></div>
+    <div>
+        <h3><a href="{{.URL}}">{{.Title}}</a></h3>
+        <p class="meta">{{if .AllDay}}{{tl localizer "All day"}}{{else}}{{date .Start "EEEE"}} · {{timeRange .Start .End}}{{end}}{{with .Location}} · {{.}}{{end}}</p>
+        {{if .Summary}}<p>{{.Summary}}</p>{{end}}
+    </div>
+</article>

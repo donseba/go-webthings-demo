@@ -1,0 +1,25 @@
+{{/* @dot github.com/donseba/go-webthings/modules/events.ListView */}}
+<main id="content" class="wrap">
+    <h1>{{.Title}}</h1>
+
+    <nav class="tags">
+        <a href="{{.UpcomingURL}}" {{if not .Past}}aria-current="true"{{end}}>{{tl localizer "Upcoming"}}</a>
+        <a href="{{.PastURL}}" {{if .Past}}aria-current="true"{{end}}>{{tl localizer "Past"}}</a>
+    </nav>
+
+    {{range .Events}}
+        <article class="event-row">
+            <div class="date-badge">{{date .Start "d"}}<small>{{date .Start "MMM"}}</small></div>
+            <div>
+                <h3><a href="{{.URL}}">{{.Title}}</a></h3>
+                <p class="meta">
+                    {{template "partials/when.gohtml" .When}}
+                    {{with .Location}} · {{.}}{{end}}
+                </p>
+                {{if .Summary}}<p>{{.Summary}}</p>{{end}}
+            </div>
+        </article>
+    {{else}}
+        <p class="notice">{{if .Past}}{{tl localizer "No past events."}}{{else}}{{tl localizer "No upcoming events right now. Check back soon."}}{{end}}</p>
+    {{end}}
+</main>

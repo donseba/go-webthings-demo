@@ -1,0 +1,719 @@
+msgid ""
+msgstr ""
+"Language: en\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "%[1]s from %[2]s"
+msgstr "%[1]s from %[2]s"
+
+msgid "%d of %d"
+msgstr "%d of %d"
+
+msgid "%d results for “%s”"
+msgstr "%d results for “%s”"
+
+msgid "A new message waits for approval."
+msgstr "A new message waits for approval."
+
+msgid "A new message was posted."
+msgstr "A new message was posted."
+
+msgid "Address"
+msgstr "Address"
+
+msgid "Admin"
+msgstr "Admin"
+
+msgid "Adults"
+msgstr "Adults"
+
+msgid "All"
+msgstr "All"
+
+msgid "All day"
+msgstr "All day"
+
+msgid "All downloads"
+msgstr "All downloads"
+
+msgid "All places"
+msgstr "All places"
+
+msgid "All services"
+msgstr "All services"
+
+msgid "All stories"
+msgstr "All stories"
+
+msgid "All workshops"
+msgstr "All workshops"
+
+msgid "Allergies, accessibility, questions…"
+msgstr "Allergies, accessibility, questions…"
+
+msgid "Almost done: check your inbox and confirm your subscription."
+msgstr "Almost done: check your inbox and confirm your subscription."
+
+msgid "Already signed up?"
+msgstr "Already signed up?"
+
+msgid "Announcement"
+msgstr "Announcement"
+
+msgid "Ask about the waiting list"
+msgstr "Ask about the waiting list"
+
+msgid "Back to the home page"
+msgstr "Back to the home page"
+
+msgid "Been to a workshop or the open studio? Leave us a message."
+msgstr "Been to a workshop or the open studio? Leave us a message."
+
+msgid "Bluesky"
+msgstr "Bluesky"
+
+msgid "Book a workshop"
+msgstr "Book a workshop"
+
+msgid "Booked on"
+msgstr "Booked on"
+
+msgid "Booking code"
+msgstr "Booking code"
+
+msgid "Cancel booking"
+msgstr "Cancel booking"
+
+msgid "Cancel this booking"
+msgstr "Cancel this booking"
+
+msgid "Categories"
+msgstr "Categories"
+
+msgid "Children"
+msgstr "Children"
+
+msgid "Close"
+msgstr "Close"
+
+msgid "Closed now"
+msgstr "Closed now"
+
+msgid "Comment"
+msgstr "Comment"
+
+msgid "Comments"
+msgstr "Comments"
+
+msgid "Comments (%d)"
+msgstr "Comments (%d)"
+
+msgid "Comments are closed."
+msgstr "Comments are closed."
+
+msgid "Comments were closed when you posted. Please try again."
+msgstr "Comments were closed when you posted. Please try again."
+
+msgid "Contact"
+msgstr "Contact"
+
+msgid "Downloads"
+msgstr "Downloads"
+
+msgid "E-mail"
+msgstr "E-mail"
+
+msgid "E-mail address"
+msgstr "E-mail address"
+
+msgid "Edit this page"
+msgstr "Edit this page"
+
+msgid "Enter the code from your confirmation mail to see or cancel your booking."
+msgstr "Enter the code from your confirmation mail to see or cancel your booking."
+
+msgid "Every season we bring back one retired glaze. You choose which."
+msgstr "Every season we bring back one retired glaze. You choose which."
+
+msgid "External link"
+msgstr "External link"
+
+msgid "Facebook"
+msgstr "Facebook"
+
+msgid "Follow us"
+msgstr "Follow us"
+
+msgid "Free"
+msgstr "Free"
+
+msgid "Friday"
+msgstr "Friday"
+
+msgid "From the journal"
+msgstr "From the journal"
+
+msgid "Full agenda"
+msgstr "Full agenda"
+
+msgid "Get in touch"
+msgstr "Get in touch"
+
+msgid "GitHub"
+msgstr "GitHub"
+
+msgid "Have your say"
+msgstr "Have your say"
+
+msgid "Hello %s,"
+msgstr "Hello %s,"
+
+msgid "If you did not subscribe, you can ignore this message."
+msgstr "If you did not subscribe, you can ignore this message."
+
+msgid "Instagram"
+msgstr "Instagram"
+
+msgid "Internal Server Error"
+msgstr "Internal Server Error"
+
+msgid "It may have moved, or it was never published."
+msgstr "It may have moved, or it was never published."
+
+msgid "Kind words"
+msgstr "Kind words"
+
+msgid "Language"
+msgstr "Language"
+
+msgid "Leave a comment"
+msgstr "Leave a comment"
+
+msgid "LinkedIn"
+msgstr "LinkedIn"
+
+msgid "Look up"
+msgstr "Look up"
+
+msgid "Look up your booking"
+msgstr "Look up your booking"
+
+msgid "Made with WebThings"
+msgstr "Made with WebThings"
+
+msgid "Main menu"
+msgstr "Main menu"
+
+msgid "Mastodon"
+msgstr "Mastodon"
+
+msgid "Meet the team"
+msgstr "Meet the team"
+
+msgid "Menu"
+msgstr "Menu"
+
+msgid "Message"
+msgstr "Message"
+
+msgid "Messages"
+msgstr "Messages"
+
+msgid "Messages are shown after we have read them."
+msgstr "Messages are shown after we have read them."
+
+msgid "Monday"
+msgstr "Monday"
+
+msgid "More messages"
+msgstr "More messages"
+
+msgid "Name"
+msgstr "Name"
+
+msgid "New messages are closed."
+msgstr "New messages are closed."
+
+msgid "Newer"
+msgstr "Newer"
+
+msgid "No comments yet. Be the first!"
+msgstr "No comments yet. Be the first!"
+
+msgid "No messages yet. Be the first!"
+msgstr "No messages yet. Be the first!"
+
+msgid "No past events."
+msgstr "No past events."
+
+msgid "No upcoming events right now. Check back soon."
+msgstr "No upcoming events right now. Check back soon."
+
+msgid "None, this workshop is full"
+msgstr "None, this workshop is full"
+
+msgid "Not found"
+msgstr "Not found"
+
+msgid "Not Found"
+msgstr "Not Found"
+
+msgid "Nothing found for “%s”."
+msgstr "Nothing found for “%s”."
+
+msgid "Nothing found."
+msgstr "Nothing found."
+
+msgid "Nothing published yet."
+msgstr "Nothing published yet."
+
+msgid "Older"
+msgstr "Older"
+
+msgid "Open now"
+msgstr "Open now"
+
+msgid "Opening hours"
+msgstr "Opening hours"
+
+msgid "Optional, never shown on the website."
+msgstr "Optional, never shown on the website."
+
+msgid "Our work is for sale in these shops, and you eat and drink from it in these cafés and restaurants."
+msgstr "Our work is for sale in these shops, and you eat and drink from it in these cafés and restaurants."
+
+msgid "Page:"
+msgstr "Page:"
+
+msgid "Past"
+msgstr "Past"
+
+msgid "Pay now"
+msgstr "Pay now"
+
+msgid "Pinterest"
+msgstr "Pinterest"
+
+msgid "Places left"
+msgstr "Places left"
+
+msgid "Please check the marked fields."
+msgstr "Please check the marked fields."
+
+msgid "Please check your name, e-mail address and the number of places."
+msgstr "Please check your name, e-mail address and the number of places."
+
+msgid "Please choose one of the options."
+msgstr "Please choose one of the options."
+
+msgid "Please confirm your subscription"
+msgstr "Please confirm your subscription"
+
+msgid "Please fill in your name and a comment."
+msgstr "Please fill in your name and a comment."
+
+msgid "Please fill in your name and a message."
+msgstr "Please fill in your name and a message."
+
+msgid "Please pay using:"
+msgstr "Please pay using:"
+
+msgid "Popular on the site"
+msgstr "Popular on the site"
+
+msgid "Post comment"
+msgstr "Post comment"
+
+msgid "Preview of revision %d (not published)."
+msgstr "Preview of revision %d (not published)."
+
+msgid "Preview of revision %d."
+msgstr "Preview of revision %d."
+
+msgid "Service Unavailable"
+msgstr "Service Unavailable"
+
+msgid "Show the published version"
+msgstr "Show the published version"
+
+msgid "Price"
+msgstr "Price"
+
+msgid "Read more"
+msgstr "Read more"
+
+msgid "Registration"
+msgstr "Registration"
+
+msgid "Registration cancelled"
+msgstr "Registration cancelled"
+
+msgid "Registration code"
+msgstr "Registration code"
+
+msgid "Registration for this workshop is closed."
+msgstr "Registration for this workshop is closed."
+
+msgid "Remarks"
+msgstr "Remarks"
+
+msgid "Review:"
+msgstr "Review:"
+
+msgid "Saturday"
+msgstr "Saturday"
+
+msgid "Search"
+msgstr "Search"
+
+msgid "Search by name or product"
+msgstr "Search by name or product"
+
+msgid "Send"
+msgstr "Send"
+
+msgid "Share"
+msgstr "Share"
+
+msgid "Show all"
+msgstr "Show all"
+
+msgid "Show on the map"
+msgstr "Show on the map"
+
+msgid "Sign the guestbook"
+msgstr "Sign the guestbook"
+
+msgid "Sign up"
+msgstr "Sign up"
+
+msgid "Sign up before"
+msgstr "Sign up before"
+
+msgid "Something went wrong"
+msgstr "Something went wrong"
+
+msgid "Something went wrong. Please try again."
+msgstr "Something went wrong. Please try again."
+
+msgid "Sorry, there are not enough places left."
+msgstr "Sorry, there are not enough places left."
+
+msgid "Studio"
+msgstr "Studio"
+
+msgid "Subscribe"
+msgstr "Subscribe"
+
+msgid "Sunday"
+msgstr "Sunday"
+
+msgid "Telegram"
+msgstr "Telegram"
+
+msgid "Thank you for registering for %s."
+msgstr "Thank you for registering for %s."
+
+msgid "Thank you for subscribing to our newsletter. Please confirm your e-mail address with the link below."
+msgstr "Thank you for subscribing to our newsletter. Please confirm your e-mail address with the link below."
+
+msgid "Thank you for voting!"
+msgstr "Thank you for voting!"
+
+msgid "Thank you for your comment."
+msgstr "Thank you for your comment."
+
+msgid "Thank you for your message!"
+msgstr "Thank you for your message!"
+
+msgid "Thank you! Your comment appears once we have read it."
+msgstr "Thank you! Your comment appears once we have read it."
+
+msgid "Thank you! Your message appears once we have read it."
+msgstr "Thank you! Your message appears once we have read it."
+
+msgid "Thank you, you are signed up. We sent you a confirmation."
+msgstr "Thank you, you are signed up. We sent you a confirmation."
+
+msgid "That did not work. Please check your e-mail address or link."
+msgstr "That did not work. Please check your e-mail address or link."
+
+msgid "That e-mail address does not match this booking."
+msgstr "That e-mail address does not match this booking."
+
+msgid "The e-mail address you signed up with"
+msgstr "The e-mail address you signed up with"
+
+msgid "The people in the studio"
+msgstr "The people in the studio"
+
+msgid "The whole team"
+msgstr "The whole team"
+
+msgid "This booking is cancelled."
+msgstr "This booking is cancelled."
+
+msgid "This field is required."
+msgstr "This field is required."
+
+msgid "This page could not be shown. Please try again in a moment."
+msgstr "This page could not be shown. Please try again in a moment."
+
+msgid "This page does not exist"
+msgstr "This page does not exist"
+
+msgid "This poll is closed."
+msgstr "This poll is closed."
+
+msgid "This text is too long."
+msgstr "This text is too long."
+
+msgid "This value is not valid."
+msgstr "This value is not valid."
+
+msgid "This workshop is full."
+msgstr "This workshop is full."
+
+msgid "Threads"
+msgstr "Threads"
+
+msgid "Thursday"
+msgstr "Thursday"
+
+msgid "TikTok"
+msgstr "TikTok"
+
+msgid "Too many attempts. Please try again later."
+msgstr "Too many attempts. Please try again later."
+
+msgid "Too Many Requests"
+msgstr "Too Many Requests"
+
+msgid "Total"
+msgstr "Total"
+
+msgid "Tuesday"
+msgstr "Tuesday"
+
+msgid "Upcoming"
+msgstr "Upcoming"
+
+msgid "Upcoming workshops"
+msgstr "Upcoming workshops"
+
+msgid "View or cancel your registration:"
+msgstr "View or cancel your registration:"
+
+msgid "Views: %d"
+msgstr "Views: %d"
+
+msgid "Visit us"
+msgstr "Visit us"
+
+msgid "Vote"
+msgstr "Vote"
+
+msgid "Votes: %d"
+msgstr "Votes: %d"
+
+msgid "Voting closes on %s."
+msgstr "Voting closes on %s."
+
+msgid "Voting has closed."
+msgstr "Voting has closed."
+
+msgid "We could not find a booking with the code %s."
+msgstr "We could not find a booking with the code %s."
+
+msgid "Website"
+msgstr "Website"
+
+msgid "Wednesday"
+msgstr "Wednesday"
+
+msgid "What we do"
+msgstr "What we do"
+
+msgid "WhatsApp"
+msgstr "WhatsApp"
+
+msgid "X"
+msgstr "X"
+
+msgid "You already paid; we will contact you about a refund."
+msgstr "You already paid; we will contact you about a refund."
+
+msgid "You already voted on this question."
+msgstr "You already voted on this question."
+
+msgid "You are unsubscribed. Sorry to see you go."
+msgstr "You are unsubscribed. Sorry to see you go."
+
+msgid "You posted several comments already. Please try again later."
+msgstr "You posted several comments already. Please try again later."
+
+msgid "You posted several messages already. Please try again later."
+msgstr "You posted several messages already. Please try again later."
+
+msgid "You receive a mail to confirm your address. Every newsletter has a link to unsubscribe."
+msgstr "You receive a mail to confirm your address. Every newsletter has a link to unsubscribe."
+
+msgid "You sent the form several times already. Please try again later."
+msgstr "You sent the form several times already. Please try again later."
+
+msgid "YouTube"
+msgstr "YouTube"
+
+msgid "Your booking code is %s."
+msgstr "Your booking code is %s."
+
+msgid "Your booking is cancelled."
+msgstr "Your booking is cancelled."
+
+msgid "Your registration for %s is cancelled."
+msgstr "Your registration for %s is cancelled."
+
+msgid "Your remarks"
+msgstr "Your remarks"
+
+msgid "Your subscription is confirmed. Welcome!"
+msgstr "Your subscription is confirmed. Welcome!"
+
+msgid "cancelled"
+msgstr "cancelled"
+
+msgid "closed"
+msgstr "closed"
+
+msgid "not paid yet"
+msgstr "not paid yet"
+
+msgid "paid"
+msgstr "paid"
+
+msgid "per child"
+msgstr "per child"
+
+msgid "per person"
+msgstr "per person"
+
+msgid "photos"
+msgstr "photos"
+
+msgid "you@example.com"
+msgstr "you@example.com"
+
+msgid "your choice"
+msgstr "your choice"
+
+msgid "Thank you. Your comment is shown after approval."
+msgstr "Thank you. Your comment is shown after approval."
+
+msgid "E-mail address (optional)"
+msgstr "E-mail address (optional)"
+
+msgid "Never shown on the website."
+msgstr "Never shown on the website."
+
+msgid "Comments are shown after approval."
+msgstr "Comments are shown after approval."
+
+msgid "Team"
+msgstr "Team"
+
+msgid "No comments yet."
+msgstr "No comments yet."
+
+msgid "Your subscription is confirmed."
+msgstr "Your subscription is confirmed."
+
+msgid "You are unsubscribed."
+msgstr "You are unsubscribed."
+
+msgid "You receive an e-mail to confirm your address. Every newsletter has a link to unsubscribe."
+msgstr "You receive an e-mail to confirm your address. Every newsletter has a link to unsubscribe."
+
+msgid "Thank you for voting."
+msgstr "Thank you for voting."
+
+msgid "Too many votes. Please try again later."
+msgstr "Too many votes. Please try again later."
+
+msgid "Thank you, you are registered. We sent you a confirmation."
+msgstr "Thank you, you are registered. We sent you a confirmation."
+
+msgid "Your registration code is %s."
+msgstr "Your registration code is %s."
+
+msgid "Registration is closed."
+msgstr "Registration is closed."
+
+msgid "None"
+msgstr "None"
+
+msgid "Remarks (optional)"
+msgstr "Remarks (optional)"
+
+msgid "There are no places left."
+msgstr "There are no places left."
+
+msgid "Already registered?"
+msgstr "Already registered?"
+
+msgid "Look up your registration"
+msgstr "Look up your registration"
+
+msgid "Your registration is cancelled."
+msgstr "Your registration is cancelled."
+
+msgid "Ceramics studio · Amsterdam-Noord"
+msgstr "Ceramics studio · Amsterdam-Noord"
+
+msgid "The studio"
+msgstr "The studio"
+
+msgid "Learn with us"
+msgstr "Learn with us"
+
+msgid "Next in the studio"
+msgstr "Next in the studio"
+
+msgid "Also coming up"
+msgstr "Also coming up"
+
+msgid "Our work"
+msgstr "Our work"
+
+msgid "Made by hand in Noord"
+msgstr "Made by hand in Noord"
+
+msgid "Tableware for restaurants and for every day: thrown, glazed and fired in our studio."
+msgstr "Tableware for restaurants and for every day: thrown, glazed and fired in our studio."
+
+msgid "View all work"
+msgstr "View all work"
+
+msgid "From students and restaurants"
+msgstr "From students and restaurants"
+
+msgid "Read all reviews"
+msgstr "Read all reviews"
+
+msgid "Notes from the workbench"
+msgstr "Notes from the workbench"
+
+msgid "Glaze of the season"
+msgstr "Glaze of the season"
+
+msgid "Teachers and makers"
+msgstr "Teachers and makers"
+
+msgid "Fresh from the kiln, in your inbox"
+msgstr "Fresh from the kiln, in your inbox"
+
+msgid "Too many searches in a short time. Wait a moment and try again."
+msgstr "Too many searches in a short time. Wait a moment and try again."
+
+msgid "K7Q4-9M2X"
+msgstr "K7Q4-9M2X"

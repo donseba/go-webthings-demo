@@ -1,0 +1,19 @@
+{{/* @dot github.com/donseba/go-webthings/modules/comments.Comment */}}
+<article class="comment" id="comment-{{.ID}}">
+    <header>
+        <strong>{{.Name}}</strong>
+        <span class="meta">{{date .CreatedAt}}</span>
+    </header>
+    <div class="comment-body">{{.HTML}}</div>
+
+    {{range .Replies}}
+        <div class="reply{{if .Staff}} staff{{end}}" id="comment-{{.ID}}">
+            <header>
+                <strong>{{.Name}}</strong>
+                {{if .Staff}}<span class="badge">{{tl localizer "Studio"}}</span>{{end}}
+                <span class="meta">{{date .CreatedAt}}</span>
+            </header>
+            <div class="comment-body">{{.HTML}}</div>
+        </div>
+    {{end}}
+</article>
